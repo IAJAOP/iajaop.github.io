@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="list操作构造函数和析构函数 vector&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空vector，没有任何元素； vector&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型vector并成为c2的一份拷贝； vector&amp;lt;Elem&amp;gt; c = c2 vector&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-07T15:46:09.780Z">
+<meta property="og:updated_time" content="2018-10-07T16:17:48.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-list">
 <meta name="twitter:description" content="list操作构造函数和析构函数 vector&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空vector，没有任何元素； vector&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型vector并成为c2的一份拷贝； vector&amp;lt;Elem&amp;gt; c = c2 vector&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容">
@@ -344,43 +344,7 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">本文总阅读量
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
 
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  分钟
-                </span>
-              
-            </div>
           
 
           
@@ -452,7 +416,7 @@
 <li><code>c.erase(beg, end)</code></li>
 <li><code>c.remove(val)</code>，移除所有其值为val的元素；</li>
 <li><p><code>c.remove_if(op)</code>，移除所有“造成op(elem)结果为true“的元素；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coll.remove_if([] (<span class="keyword">int</span> i)&#123;<span class="keyword">return</span> I % <span class="number">2</span> == <span class="number">0</span>;&#125;);</span><br><span class="line"><span class="comment">//用一个lambda找出应该被移除的元素。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coll.remove_if([] (<span class="keyword">int</span> i)&#123;<span class="keyword">return</span> i % <span class="number">2</span> == <span class="number">0</span>;&#125;);</span><br><span class="line"><span class="comment">//用一个lambda找出应该被移除的元素。</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>c.resize(n)</code>，将元素数量改为n，若size()变大，多出来的新元素都需以default构造函数完成初始化；</p>
 </li>
@@ -722,15 +686,6 @@
   <span class="author" itemprop="copyrightHolder">IAJAOP</span>
 
   
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count"></span>
-  
 </div>
 
 
@@ -751,26 +706,6 @@
   <span class="post-count">博客全站共字</span>
 </div> --!>
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      本站访客数
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      人次
-    </span>
-  
-
-  
-    <span class="site-pv">
-      本站总访问量
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      次
-    </span>
-  
-</div>
-
 
 
 
