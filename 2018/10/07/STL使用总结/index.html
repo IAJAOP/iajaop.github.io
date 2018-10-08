@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-07T15:47:57.000Z">
+<meta property="og:updated_time" content="2018-10-08T09:39:33.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL容器使用总结">
 <meta name="twitter:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
@@ -443,7 +443,7 @@
 <h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><p>头文件<code>#include &lt;vector&gt;</code><br>vector讲其元素置于一个dynamic array中管理，允许随机访问，可理解为一个动态数组，存储空间是连续的，从尾部添加或删除元素都很快。<br>Vector扩容时会重新分配内存，一旦内存重新分配，vector元素相关的所有reference、pointer、iterator都会失效。<br>Vector不能使用reserve()缩减容量，利用swap函数能巧妙缩减容量。</p>
 <h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>头文件<code>#include &lt;deque&gt;</code><br>deque是一个dynamic array，可以向两端发展，从尾部或头部安插元素都十分迅速，存储空间是分块连续的。deque通常实现为一组独立区块，第一区块朝某方向扩展，最末区块朝另一方向扩展，所以迭代器需要在不同区块间挑战。<br>Deque不支持对容量和内存重新分配时机的控制，且不必在内存重新分配时复制所有元素。除了头尾两端，在任何地点安插或删除元素都将导致指向deque元素的任何pointer、reference和iterator失效。</p>
 <h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>头文件<code>#include &lt;list&gt;</code><br>list由双向链表实现，不提供随机访问。优势是在任何位置上执行安插和删除动作都十分迅速。<br>List对象自带两个pointer，用老指向第一个和最后一个元素。<br>安插和删除不会造成各个pointer、reference和iterator失效。</p>
-<h3 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h3><p>头文件<code>#include &lt;forward_list&gt;</code><br>forward_list由单向链表实现，可节省内存，不提供随机访问。</p>
+<h3 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h3><p>头文件<code>#include &lt;forward_list&gt;</code><br>forward_list由单向链表实现，可节省内存，不提供随机访问，只提供向前迭代器，而不是双向迭代器。因此它不支持返向迭代器，意味着没有reverse_iterator之类的类型以及rbegin()、rend()之类的成员函数。</p>
 <h2 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h2><p>是一种已排序集合，元素位置取决于value（或key，如果元素是个key/value pair）和给定的某个排序准则。<br>《C++标准库》第二版中有set、multiset、map、multimap。<br>《STL源码分析》中有set、multiset、map、multimap、hash_set、hash_map、hash_multiset、hash_multimap。</p>
 <h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>头文件<code>#include &lt;set&gt;</code><br>元素依据其value自动排序，每个元素只能出现一次，不允许重复。</p>
 <h3 id="multiset"><a href="#multiset" class="headerlink" title="multiset"></a>multiset</h3><p>头文件<code>#include &lt;multiset&gt;</code><br>和set的唯一差别是，元素可以重复。</p>
@@ -587,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -609,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -722,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.2k</span>
+    <span title="Site words total count">7.4k</span>
   
 </div>
 
@@ -741,7 +741,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.2k字</span>
+  <span class="post-count">博客全站共7.4k字</span>
 </div> --!>
         
 <div class="busuanzi-count">

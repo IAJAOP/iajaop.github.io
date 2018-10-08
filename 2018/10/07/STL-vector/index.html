@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="vector操作构造函数和析构函数 vector&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空vector，没有任何元素； vector&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型vector并成为c2的一份拷贝； vector&amp;lt;Elem&amp;gt; c = c2 vector&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-07T14:47:00.988Z">
+<meta property="og:updated_time" content="2018-10-08T08:30:31.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-vector">
 <meta name="twitter:description" content="vector操作构造函数和析构函数 vector&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空vector，没有任何元素； vector&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型vector并成为c2的一份拷贝； vector&amp;lt;Elem&amp;gt; c = c2 vector&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv">
@@ -409,7 +409,9 @@
 <li><code>vector&lt;Elem&gt; c(beg, end)</code></li>
 <li><code>vector&lt;Elem&gt; c(initlist)</code></li>
 <li><code>vector&lt;Elem&gt; c = initlist</code></li>
-<li><code>c.~vector()</code>，销毁所有元素，释放内存。<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2></li>
+<li><code>c.~vector()</code>，销毁所有元素，释放内存。</li>
+</ul>
+<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><ul>
 <li><code>c.empty()</code></li>
 <li><code>c.size()</code></li>
 <li><code>c.max_size()</code>，返回元素个数之最大可能量；</li>
@@ -421,7 +423,9 @@
 <li><code>c1 &lt; c2</code></li>
 <li><code>c1 &gt; c2</code></li>
 <li><code>c1 &lt;= c2</code></li>
-<li><code>c1&gt;= c2</code><h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2></li>
+<li><code>c1&gt;= c2</code></li>
+</ul>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
 <li><code>c = c2</code></li>
 <li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
 <li><code>c = initlist</code></li>
@@ -429,11 +433,16 @@
 <li><code>c.assign(beg, end)</code></li>
 <li><code>c.assign(initlist)</code></li>
 <li><code>c1.swap(c2)</code></li>
-<li><code>swap(c1, c2)</code><h2 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h2></li>
+<li><code>swap(c1, c2)</code></li>
+</ul>
+<h2 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h2><ul>
 <li><code>c[idx]</code>，返回索引idx所指元素，不检查范围；</li>
 <li><code>c.at(idx)</code>，返回索引idx所指元素，若idx超出范围则抛出rang-error异常；</li>
 <li><code>c.front()</code>，返回第一元素，不检查；</li>
-<li><code>c.back()</code>，返回最末元素，不检查。<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2>带const的都始自C++11。</li>
+<li><code>c.back()</code>，返回最末元素，不检查。</li>
+</ul>
+<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
+<ul>
 <li><code>c.begin()</code>，返回一个random-access iterator指向第一元素；</li>
 <li><code>c.end()</code>，返回一个random-access iterator指向最末元素的下一位置；</li>
 <li><code>c.cbegin()</code>，返回一个const random-access iterator指向第一元素；</li>
@@ -441,7 +450,9 @@
 <li><code>c.rbegin()</code>，返回一个reverse iterator指向反向迭代的第一元素；</li>
 <li><code>c.rend()</code>，返回一个reverse iterator指向反向迭代的最末元素的下一位置；</li>
 <li><code>c.crbegin()</code>，返回一个const reverse iterator指向反向迭代的第一元素；</li>
-<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2></li>
+<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；</li>
+</ul>
+<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><ul>
 <li><code>c.push_back(elem)</code>，附加一个elem的拷贝于末尾；</li>
 <li><code>c.pop_back()</code>，移除最后一个元素，需检查vector是否为空，不返回；</li>
 <li><code>c.insert(pos, elem)</code>，在iterator位置pos之前方插入1个elem拷贝，并返回新元素的位置；</li>
@@ -454,12 +465,15 @@
 <li><code>c.erase(beg, end)</code></li>
 <li><code>c.resize(n)</code>，将元素数量改为n，若size()变大，多出来的新元素都需以default构造函数完成初始化；</li>
 <li><code>c.resize(n, elem)</code>，将元素数量改为n，若size()变大，多出来的新元素都是elem的拷贝；</li>
-<li><code>c.clear()</code>，移除元素，将容器清空。<h2 id="将Vector当作C-Style-Array使用"><a href="#将Vector当作C-Style-Array使用" class="headerlink" title="将Vector当作C-Style Array使用"></a>将Vector当作C-Style Array使用</h2><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2></li>
+<li><code>c.clear()</code>，移除元素，将容器清空。</li>
+</ul>
+<h2 id="将Vector当作C-Style-Array使用"><a href="#将Vector当作C-Style-Array使用" class="headerlink" title="将Vector当作C-Style Array使用"></a>将Vector当作C-Style Array使用</h2><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
 <li>如果push_back()安插元素时发生异常，函数将不产生效用；</li>
 <li>如果元素的copy/move操作不抛出异常，那么insert()、emplace()、emplace_back()和push_back()要么成功，要么不产生效用；</li>
 <li>pop_back()绝不会抛出异常；</li>
-<li>swap()和clear()不抛出异常；<br>所有这些保证都基于一个条件：析构函数不得抛出异常。<h2 id="Class-vector"><a href="#Class-vector" class="headerlink" title="Class vector"></a>Class vector<bool></bool></h2>一般实现版本为每个bool元素分配至少1byte空间，而vector<bool>特化版的内部只使用1bit存放一个元素，空间节省8倍。C++的最小可定址值乃是以byte为单位，所以上述的vector特化版必须对reference和iterator做特殊处理。</bool></li>
+<li>swap()和clear()不抛出异常；<br>所有这些保证都基于一个条件：析构函数不得抛出异常。</li>
 </ul>
+<h2 id="Class-vector"><a href="#Class-vector" class="headerlink" title="Class vector"></a>Class vector<bool></bool></h2><p>一般实现版本为每个bool元素分配至少1byte空间，而vector<bool>特化版的内部只使用1bit存放一个元素，空间节省8倍。C++的最小可定址值乃是以byte为单位，所以上述的vector特化版必须对reference和iterator做特殊处理。</bool></p>
 
       
     </div>
@@ -589,7 +603,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -611,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -724,7 +738,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.2k</span>
+    <span title="Site words total count">7.4k</span>
   
 </div>
 
@@ -743,7 +757,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.2k字</span>
+  <span class="post-count">博客全站共7.4k字</span>
 </div> --!>
         
 <div class="busuanzi-count">

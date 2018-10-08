@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++标准库,STL,容器,list," />
+  <meta name="keywords" content="C++标准库,STL,容器,forward_forward_list," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
-<meta name="keywords" content="C++标准库,STL,容器,list">
+<meta name="description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
+<meta name="keywords" content="C++标准库,STL,容器,forward_forward_list">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL-list">
-<meta property="og:url" content="http://yoursite.com/2018/10/07/STL-list/index.html">
+<meta property="og:title" content="STL-forward_list">
+<meta property="og:url" content="http://yoursite.com/2018/10/08/STL-forward-list/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
+<meta property="og:description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T09:51:32.444Z">
+<meta property="og:updated_time" content="2018-10-08T09:51:37.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STL-list">
-<meta name="twitter:description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
+<meta name="twitter:title" content="STL-forward_list">
+<meta name="twitter:description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/07/STL-list/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/08/STL-forward-list/"/>
 
 
 
 
 
-  <title>STL-list | 小师弟的私房</title>
+  <title>STL-forward_list | 小师弟的私房</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/07/STL-list/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/STL-forward-list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">STL-list</h1>
+          <h1 class="post-title" itemprop="name headline">STL-forward_list</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-07T23:00:17+08:00">
-                2018-10-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-08T16:03:25+08:00">
+                2018-10-08
               </time>
             
 
@@ -398,22 +398,22 @@
       
 
       
-        <h1 id="list操作"><a href="#list操作" class="headerlink" title="list操作"></a>list操作</h1><h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h2><ul>
-<li><code>list&lt;Elem&gt; c</code>，default构造函数，产生一个空list，没有任何元素；</li>
-<li><code>list&lt;Elem&gt; c(c2)</code>，copy构造函数，建立c2的同型list并成为c2的一份拷贝；</li>
-<li><code>list&lt;Elem&gt; c = c2</code></li>
-<li><code>list&lt;Elem&gt; c(rv)</code>，move构造函数，取rvalue rv内容构造一个新的list（始自C++11）；</li>
-<li><code>list&lt;Elem&gt; c = rv</code></li>
-<li><code>list&lt;Elem&gt; c(n)</code>，利用元素的default构造函数生成一个大小为n的list；</li>
-<li><code>list&lt;Elem&gt; c(n, elem)</code></li>
-<li><code>list&lt;Elem&gt; c(beg, end)</code></li>
-<li><code>list&lt;Elem&gt; c(initlist)</code></li>
-<li><code>list&lt;Elem&gt; c = initlist</code></li>
-<li><code>c.~list()</code>，销毁所有元素，释放内存。</li>
+        <h1 id="forwardlist操作"><a href="#forwardlist操作" class="headerlink" title="forwardlist操作"></a>forwardlist操作</h1><h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h2><ul>
+<li><code>forward_list&lt;Elem&gt; c</code>，default构造函数，产生一个空forward_list，没有任何元素；</li>
+<li><code>forward_list&lt;Elem&gt; c(c2)</code>，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝；</li>
+<li><code>forward_list&lt;Elem&gt; c = c2</code></li>
+<li><code>forward_list&lt;Elem&gt; c(rv)</code>，move构造函数，取rvalue rv内容构造一个新的forward_list（始自C++11）；</li>
+<li><code>forward_list&lt;Elem&gt; c = rv</code></li>
+<li><code>forward_list&lt;Elem&gt; c(n)</code>，利用元素的default构造函数生成一个大小为n的forward_list；</li>
+<li><code>forward_list&lt;Elem&gt; c(n, elem)</code></li>
+<li><code>forward_list&lt;Elem&gt; c(beg, end)</code></li>
+<li><code>forward_list&lt;Elem&gt; c(init_list)</code></li>
+<li><code>forward_list&lt;Elem&gt; c = init_list</code></li>
+<li><code>c.~forward_list()</code>，销毁所有元素，释放内存。</li>
 </ul>
-<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><ul>
+<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><p>forward_list不提供成员函数size()。</p>
+<ul>
 <li><code>c.empty()</code></li>
-<li><code>c.size()</code></li>
 <li><code>c.max_size()</code>，返回元素个数之最大可能量；</li>
 <li><code>c1 == c2</code></li>
 <li><code>c1 != c2</code></li>
@@ -425,65 +425,57 @@
 <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
 <li><code>c = c2</code></li>
 <li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
-<li><code>c = initlist</code></li>
+<li><code>c = initforward_list</code></li>
 <li><code>c.assign(n, elem)</code>， 复制n个elem，赋值c；</li>
 <li><code>c.assign(beg, end)</code></li>
-<li><code>c.assign(initlist)</code></li>
+<li><code>c.assign(initforward_list)</code></li>
 <li><code>c1.swap(c2)</code></li>
 <li><code>swap(c1, c2)</code></li>
 </ul>
-<h2 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h2><p>访问list的所有元素，必须使用rang-base for循环，特定操作函数或迭代器。<br>List不支持随机访问。</p>
+<h2 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h2><p>访问forward_list的所有元素，必须使用rang-base for循环，特定操作函数或迭代器。<br>forward_list不支持随机访问。</p>
 <ul>
 <li><code>c.front()</code>，返回第一元素，不检查；</li>
-<li><code>c.back()</code>，返回最末元素，不检查。</li>
 </ul>
-<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
+<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>只提供向前迭代器，而不是双向迭代器。因此它不支持返向迭代器，意味着没有reverse_iterator之类的类型以及rbegin()、rend()之类的成员函数。<br>带const的都始自C++11。</p>
 <ul>
 <li><code>c.begin()</code>，返回一个random-access iterator指向第一元素；</li>
 <li><code>c.end()</code>，返回一个random-access iterator指向最末元素的下一位置；</li>
 <li><code>c.cbegin()</code>，返回一个const random-access iterator指向第一元素；</li>
 <li><code>c.cend()</code>，返回一个const random-access iterator指向最末元素的下一位置；</li>
-<li><code>c.rbegin()</code>，返回一个reverse iterator指向反向迭代的第一元素；</li>
-<li><code>c.rend()</code>，返回一个reverse iterator指向反向迭代的最末元素的下一位置；</li>
-<li><code>c.crbegin()</code>，返回一个const reverse iterator指向反向迭代的第一元素；</li>
-<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；</li>
+<li><code>c.before_begin()</code>，返回一个forward iterator指向第一元素的前一位置；</li>
+<li><code>c.cbefore_begin()</code>，返回一个const forward iterator指向第一元素的前一位置。</li>
 </ul>
-<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><ul>
-<li><code>c.push_back(elem)</code>，附加一个elem的拷贝于末尾；</li>
-<li><code>c.pop_back()</code>，移除最后一个元素，需检查list是否为空，不返回；</li>
+<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><p>用insert_after()取代insert()，将新元素安插于第一实参所表示的元素之后。</p>
+<ul>
 <li><code>c.push_front(elem)</code>，在头部插入elem的一个拷贝；</li>
 <li><code>c.pop_front()</code>，移除第一元素，但不返回；</li>
-<li><code>c.insert(pos, elem)</code>，在iterator位置pos之前方插入1个elem拷贝，并返回新元素的位置；</li>
-<li><code>c.insert(pos, n, elem)</code>，在iterator位置pos之前方插入n个elem拷贝，并返回第一个新元素的位置（n == 0，返回pos）；</li>
-<li><code>c.insert(pos, beg, end)</code></li>
-<li><code>c.insert(pos, initlist)</code></li>
-<li><code>c.emplace(pos, args)</code>，在iterator位置pos之前方插入1个arg为初值的元素，并返回新元素的位置（始自C++11），相对于insert函数执行构造函数、拷贝构造函数，emplace只执行构造函数；</li>
-<li><code>c.emplace_back(args)</code>，附加一个以args为初值的元素于末尾，不返回；</li>
+<li><code>c.insert_after(pos, elem)</code>，在iterator位置pos之后插入1个elem拷贝，并返回新元素的位置；</li>
+<li><code>c.insert_after(pos, n, elem)</code>，在iterator位置pos之后插入n个elem拷贝，并返回第一个新元素的位置（n == 0，返回pos）；</li>
+<li><code>c.insert_after(pos, beg, end)</code></li>
+<li><code>c.insert_after(pos, initlist)</code></li>
+<li><code>c.emplace_after(pos, args)</code>，在iterator位置pos之后插入1个arg为初值的元素，并返回新元素的位置（始自C++11），相对于insert_after函数执行构造函数、拷贝构造函数，emplace只执行构造函数；</li>
 <li><code>c.emplace_front(args</code>，附加一个以args为初值的元素于头部，不返回；</li>
-<li><code>c.erase(pos)</code>，移除iterator位置pos上的元素，返回下一元素位置；</li>
-<li><code>c.erase(beg, end)</code></li>
+<li><code>c.erase_after(pos)</code>，移除iterator位置pos之后的元素，返回下一元素位置；</li>
+<li><code>c.erase_after(beg, end)</code></li>
 <li><code>c.remove(val)</code>，移除所有其值为val的元素；</li>
-<li><p><code>c.remove_if(op)</code>，移除所有“造成op(elem)结果为true“的元素；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coll.remove_if([] (<span class="keyword">int</span> i)&#123;<span class="keyword">return</span> i % <span class="number">2</span> == <span class="number">0</span>;&#125;);</span><br><span class="line"><span class="comment">//用一个lambda找出应该被移除的元素。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>c.resize(n)</code>，将元素数量改为n，若size()变大，多出来的新元素都需以default构造函数完成初始化；</p>
-</li>
+<li><code>c.remove_if(op)</code>，移除所有“造成op(elem)结果为true“的元素；</li>
+<li><code>c.resize(n)</code>，将元素数量改为n，若size()变大，多出来的新元素都需以default构造函数完成初始化；</li>
 <li><code>c.resize(n, elem)</code>，将元素数量改为n，若size()变大，多出来的新元素都是elem的拷贝；</li>
 <li><code>c.clear()</code>，移除元素，将容器清空。</li>
 </ul>
 <h2 id="其他改变元素的操作"><a href="#其他改变元素的操作" class="headerlink" title="其他改变元素的操作"></a>其他改变元素的操作</h2><ul>
 <li><code>c.unique()</code>，若存在若干相邻而数值相同的元素，则移除重复元素，只留一个；</li>
 <li><code>c.unique(op)</code>，若存在若干相邻元素都使op()的结果为true，则移除重复元素，只留一个；</li>
-<li><code>splice(pos, c2)</code>，将c2内的所有元素转移（move）到c之内、迭代器pos之前</li>
-<li><code>splice(pos, c2, c2pos)</code></li>
-<li><code>c.splice(pos, c2, c2beg, c2end)</code></li>
+<li><code>c.splice_after(pos, c2)</code>，将c2内的所有元素转移（move）到c之内、迭代器pos之后</li>
+<li><code>c.splice_after(pos, c2, c2pos)</code></li>
+<li><code>c.splice_after(pos, c2, c2beg, c2end)</code></li>
 <li><code>c.sort()</code>，以operator &lt; 为准则对所有元素排序；</li>
 <li><code>c.sort(op)</code>以op()准则对所有元素排序；</li>
-<li><code>c.merge(c2)</code>，假设c和c2容器都包含op()准则下的已排序元素，将c2的全部元素转移到c，并到证合并后的list仍为已排序；</li>
-<li><code>c.merge(c2, op)</code>，假设c和c2容器都包含已排序元素，将c2的全部元素转移到c，并保证合并后的list在op()准则下仍为已排序；</li>
+<li><code>c.merge(c2)</code>，假设c和c2容器都包含op()准则下的已排序元素，将c2的全部元素转移到c，并到证合并后的forward_list仍为已排序；</li>
+<li><code>c.merge(c2, op)</code>，假设c和c2容器都包含已排序元素，将c2的全部元素转移到c，并保证合并后的forward_list在op()准则下仍为已排序；</li>
 <li><code>c.reverse()</code>，将所有元素反序。</li>
 </ul>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>List对于异常安全性提供了最佳支持，所有操作都是不成功便成仁：要么成功，要么无效。</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>forward_list对于异常安全性提供了最佳支持，所有操作都是不成功便成仁：要么成功，要么无效。</p>
 
       
     </div>
@@ -507,7 +499,7 @@
           
             <a href="/tags/容器/" rel="tag"># 容器</a>
           
-            <a href="/tags/list/" rel="tag"># list</a>
+            <a href="/tags/forward-forward-list/" rel="tag"># forward_forward_list</a>
           
         </div>
       
@@ -520,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/07/STL-deque/" rel="next" title="STL-deque">
-                <i class="fa fa-chevron-left"></i> STL-deque
+              <a href="/2018/10/07/STL-list/" rel="next" title="STL-list">
+                <i class="fa fa-chevron-left"></i> STL-list
               </a>
             
           </div>
@@ -530,8 +522,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/08/STL-forward-list/" rel="prev" title="STL-forward_list">
-                STL-forward_list <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/08/STL-set-multiset/" rel="prev" title="STL-set-multiset">
+                STL-set-multiset <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#list操作"><span class="nav-number">1.</span> <span class="nav-text">list操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易型操作"><span class="nav-number">1.2.</span> <span class="nav-text">非更易型操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.3.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素访问"><span class="nav-number">1.4.</span> <span class="nav-text">元素访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.5.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.6.</span> <span class="nav-text">安插和移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他改变元素的操作"><span class="nav-number">1.7.</span> <span class="nav-text">其他改变元素的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.8.</span> <span class="nav-text">异常处理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#forwardlist操作"><span class="nav-number">1.</span> <span class="nav-text">forwardlist操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易型操作"><span class="nav-number">1.2.</span> <span class="nav-text">非更易型操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.3.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素访问"><span class="nav-number">1.4.</span> <span class="nav-text">元素访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.5.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.6.</span> <span class="nav-text">安插和移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他改变元素的操作"><span class="nav-number">1.7.</span> <span class="nav-text">其他改变元素的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.8.</span> <span class="nav-text">异常处理</span></a></li></ol></li></ol></div>
             
 
           </div>
