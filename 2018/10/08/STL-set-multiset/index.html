@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 ##">
+<meta name="description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 构造函数和析构函数 set&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空set，没有任何元素，默认排序准则； set&amp;lt;Elem, op&amp;gt; c，建立一个空set，以op为排序准则； set&amp;lt;Elem&amp;gt; c(c2)，">
 <meta name="keywords" content="C++标准库,STL,容器,set,multiset">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-set-multiset">
 <meta property="og:url" content="http://yoursite.com/2018/10/08/STL-set-multiset/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 ##">
+<meta property="og:description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 构造函数和析构函数 set&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空set，没有任何元素，默认排序准则； set&amp;lt;Elem, op&amp;gt; c，建立一个空set，以op为排序准则； set&amp;lt;Elem&amp;gt; c(c2)，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T09:57:06.253Z">
+<meta property="og:updated_time" content="2018-10-08T15:27:58.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-set-multiset">
-<meta name="twitter:description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 ##">
+<meta name="twitter:description" content="set和multiset操作set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。 构造函数和析构函数 set&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空set，没有任何元素，默认排序准则； set&amp;lt;Elem, op&amp;gt; c，建立一个空set，以op为排序准则； set&amp;lt;Elem&amp;gt; c(c2)，">
 
 
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  39字
+                  907字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -399,8 +399,70 @@
 
       
         <h1 id="set和multiset操作"><a href="#set和multiset操作" class="headerlink" title="set和multiset操作"></a>set和multiset操作</h1><p>set和multiset会根据特定的排序准则自动排序，不同时的set不允许元素重复，而multiset允许元素重复。</p>
-<p>## </p>
-
+<h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h2><ul>
+<li><code>set&lt;Elem&gt; c</code>，default构造函数，产生一个空set，没有任何元素，默认排序准则；</li>
+<li><code>set&lt;Elem, op&gt; c</code>，建立一个空set，以op为排序准则；</li>
+<li><code>set&lt;Elem&gt; c(c2)</code>，copy构造函数，建立c2的同型set并成为c2的一份拷贝；</li>
+<li><code>set&lt;Elem&gt; c = c2</code></li>
+<li><code>set&lt;Elem&gt; c(rv)</code>，move构造函数，取rvalue rv内容构造一个新的set（始自C++11）；</li>
+<li><code>set&lt;Elem&gt; c = rv</code></li>
+<li><code>set&lt;Elem&gt; c(beg, end)</code></li>
+<li><code>set&lt;Elem&gt; c(initlist)</code></li>
+<li><code>set&lt;Elem&gt; c = initlist</code></li>
+<li><code>c.~set()</code>，销毁所有元素，释放内存。</li>
+</ul>
+<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><ul>
+<li><code>c.key_comp()</code>，返回“比较准则”；</li>
+<li><code>c.value_comp()</code>，返回针对value的“比较准则“（和key_comp()相同）；</li>
+<li><code>c.empty()</code></li>
+<li><code>c.size()</code></li>
+<li><code>c.max_size()</code>，返回元素个数之最大可能量；</li>
+<li><code>c1 == c2</code></li>
+<li><code>c1 != c2</code></li>
+<li><code>c1 &lt; c2</code></li>
+<li><code>c1 &gt; c2</code></li>
+<li><code>c1 &lt;= c2</code></li>
+<li><code>c1 &gt;= c2</code></li>
+</ul>
+<h2 id="特殊的查找函数"><a href="#特殊的查找函数" class="headerlink" title="特殊的查找函数"></a>特殊的查找函数</h2><ul>
+<li><code>c.count(val)</code>，返回元素值为val的元素个数；</li>
+<li><code>c.find(val)</code>，返回元素值为val的第一个元素，若找不到返回end();</li>
+<li>针对已排序的容器。</li>
+<li><code>c.lower_bound(val)</code>，返回元素值 &gt;= val的第一个元素位置；</li>
+<li><code>c.upper_bound(val)</code>，返回元素值 &gt; val的第一个元素位置；</li>
+<li><code>c.equal_rangge(val)</code>，返回val可被安插的第一个位置和最后一个位置，即元素值 == val的元素区间，返回的是一个pair。</li>
+</ul>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
+<li><code>c = c2</code></li>
+<li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
+<li><code>c = initlist</code></li>
+<li><code>c1.swap(c2)</code></li>
+<li><code>swap(c1, c2)</code></li>
+</ul>
+<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
+<ul>
+<li><code>c.begin()</code>，返回一个random-access iterator指向第一元素；</li>
+<li><code>c.end()</code>，返回一个random-access iterator指向最末元素的下一位置；</li>
+<li><code>c.cbegin()</code>，返回一个const random-access iterator指向第一元素；</li>
+<li><code>c.cend()</code>，返回一个const random-access iterator指向最末元素的下一位置；</li>
+<li><code>c.rbegin()</code>，返回一个reverse iterator指向反向迭代的第一元素；</li>
+<li><code>c.rend()</code>，返回一个reverse iterator指向反向迭代的最末元素的下一位置；</li>
+<li><code>c.crbegin()</code>，返回一个const reverse iterator指向反向迭代的第一元素；</li>
+<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；</li>
+</ul>
+<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><ul>
+<li><code>c.insert(val)</code>，安插一个val拷贝，返回新元素位置，对set而言不论是否成功；</li>
+<li><code>c.insert(pos, val)</code>，安插一个val拷贝，返回新元素位置，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.insert(beg, end)</code></li>
+<li><code>c.insert(initlist)</code></li>
+<li><code>c.emplace(args)</code>，插入1个arg为初值的元素，并返回新元素的位置（始自C++11），对set而言不论是否成功；</li>
+<li><code>c.emplace_hint(pos, args)</code>，安插一个以args为初值的元素，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.erase(val)</code>，移除所有与val相等的元素，返回被移除的元素个数；</li>
+<li><code>c.erase(pos)</code>，移除iterator位置pos上的元素吧，无返回值；</li>
+<li><code>c.erase(beg, end)</code>，移除区间[beg, end)内的所有元素，无返回值；</li>
+<li><code>c.clear()</code>，移除元素，将容器清空。<br>注意，泳衣安插元素的函数：insert()和emplace()，其返回类型不尽相同，因为multiset允许元素重复而set不允许。set的返回类型是以pair组织起来的两个值，second成员表示安插是否成功，first成员表示新元素的位置，或现存在的相同元素的位置。</li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2>
       
     </div>
     
@@ -447,6 +509,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/08/STL-map-multimap/" rel="prev" title="STL-map-multimap">
+                STL-map-multimap <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -527,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -549,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -628,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#set和multiset操作"><span class="nav-number">1.</span> <span class="nav-text">set和multiset操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#set和multiset操作"><span class="nav-number">1.</span> <span class="nav-text">set和multiset操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易型操作"><span class="nav-number">1.2.</span> <span class="nav-text">非更易型操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊的查找函数"><span class="nav-number">1.3.</span> <span class="nav-text">特殊的查找函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.4.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.5.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.6.</span> <span class="nav-text">安插和移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.7.</span> <span class="nav-text">异常处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -662,7 +728,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.4k</span>
+    <span title="Site words total count">8.4k</span>
   
 </div>
 
@@ -681,7 +747,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.4k字</span>
+  <span class="post-count">博客全站共8.4k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

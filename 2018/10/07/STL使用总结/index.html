@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T09:39:33.463Z">
+<meta property="og:updated_time" content="2018-10-08T15:27:48.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL容器使用总结">
 <meta name="twitter:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.9k字
+                  2.1k字
                 </span>
               
 
@@ -445,7 +445,7 @@
 <h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>头文件<code>#include &lt;list&gt;</code><br>list由双向链表实现，不提供随机访问。优势是在任何位置上执行安插和删除动作都十分迅速。<br>List对象自带两个pointer，用老指向第一个和最后一个元素。<br>安插和删除不会造成各个pointer、reference和iterator失效。</p>
 <h3 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h3><p>头文件<code>#include &lt;forward_list&gt;</code><br>forward_list由单向链表实现，可节省内存，不提供随机访问，只提供向前迭代器，而不是双向迭代器。因此它不支持返向迭代器，意味着没有reverse_iterator之类的类型以及rbegin()、rend()之类的成员函数。</p>
 <h2 id="关联式容器"><a href="#关联式容器" class="headerlink" title="关联式容器"></a>关联式容器</h2><p>是一种已排序集合，元素位置取决于value（或key，如果元素是个key/value pair）和给定的某个排序准则。<br>《C++标准库》第二版中有set、multiset、map、multimap。<br>《STL源码分析》中有set、multiset、map、multimap、hash_set、hash_map、hash_multiset、hash_multimap。</p>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>头文件<code>#include &lt;set&gt;</code><br>元素依据其value自动排序，每个元素只能出现一次，不允许重复。</p>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>头文件<code>#include &lt;set&gt;</code><br>set是“以节点(node)为基础”的容器。<br>元素依据其value自动排序，每个元素只能出现一次，不允许重复，自动排序造成set的一个重要限制：不能直接改变元素值，这回打乱原本正确的排序。因此，要改变元素值，必须先删除旧元素，再插入新元素。<br>set事实上通常以红黑树实现，红黑树在改变元素数量和搜寻方面都很出色，红黑树保证节点安插时最多只会做两个重新链接动作，而且到达某一元素的最长路径深度至多只是最短路径深度的两倍。</p>
 <h3 id="multiset"><a href="#multiset" class="headerlink" title="multiset"></a>multiset</h3><p>头文件<code>#include &lt;multiset&gt;</code><br>和set的唯一差别是，元素可以重复。</p>
 <h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>头文件<code>#include &lt;map&gt;</code><br>每个元素都是key/value pair，其中key是排序准则的基准，每个key只能出现一次，不允许重复。</p>
 <h3 id="multimap"><a href="#multimap" class="headerlink" title="multimap"></a>multimap</h3><p>头文件<code>#include &lt;multimap&gt;</code><br>和map的唯一差别是，元素可以重复，也就是multimap允许其元素拥有相同的key。Multimap可被当作字典使用。</p>
@@ -587,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -609,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -722,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.4k</span>
+    <span title="Site words total count">8.4k</span>
   
 </div>
 
@@ -741,7 +741,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.4k字</span>
+  <span class="post-count">博客全站共8.4k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
