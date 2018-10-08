@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++标准库,STL,容器,forward_forward_list," />
+  <meta name="keywords" content="C++标准库,STL,容器,forward_list," />
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
-<meta name="keywords" content="C++标准库,STL,容器,forward_forward_list">
+<meta name="keywords" content="C++标准库,STL,容器,forward_list">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-forward_list">
 <meta property="og:url" content="http://yoursite.com/2018/10/08/STL-forward-list/index.html">
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T09:51:37.323Z">
+<meta property="og:updated_time" content="2018-10-08T09:59:02.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-forward_list">
 <meta name="twitter:description" content="forwardlist操作构造函数和析构函数 forward_list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空forward_list，没有任何元素； forward_list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型forward_list并成为c2的一份拷贝； forward_list&amp;lt;Elem&amp;gt; c = c2 forward_l">
@@ -407,8 +407,8 @@
 <li><code>forward_list&lt;Elem&gt; c(n)</code>，利用元素的default构造函数生成一个大小为n的forward_list；</li>
 <li><code>forward_list&lt;Elem&gt; c(n, elem)</code></li>
 <li><code>forward_list&lt;Elem&gt; c(beg, end)</code></li>
-<li><code>forward_list&lt;Elem&gt; c(init_list)</code></li>
-<li><code>forward_list&lt;Elem&gt; c = init_list</code></li>
+<li><code>forward_list&lt;Elem&gt; c(initlist)</code></li>
+<li><code>forward_list&lt;Elem&gt; c = initlist</code></li>
 <li><code>c.~forward_list()</code>，销毁所有元素，释放内存。</li>
 </ul>
 <h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><p>forward_list不提供成员函数size()。</p>
@@ -425,10 +425,10 @@
 <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
 <li><code>c = c2</code></li>
 <li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
-<li><code>c = initforward_list</code></li>
+<li><code>c = initlist</code></li>
 <li><code>c.assign(n, elem)</code>， 复制n个elem，赋值c；</li>
 <li><code>c.assign(beg, end)</code></li>
-<li><code>c.assign(initforward_list)</code></li>
+<li><code>c.assign(initlist)</code></li>
 <li><code>c1.swap(c2)</code></li>
 <li><code>swap(c1, c2)</code></li>
 </ul>
@@ -499,7 +499,7 @@
           
             <a href="/tags/容器/" rel="tag"># 容器</a>
           
-            <a href="/tags/forward-forward-list/" rel="tag"># forward_forward_list</a>
+            <a href="/tags/forward-list/" rel="tag"># forward_list</a>
           
         </div>
       
