@@ -79,15 +79,18 @@
 
 
 
+<meta name="description" content="map和multimap操作构造函数和析构函数 map&amp;lt;Key, Val&amp;gt; c，default构造函数，产生一个空map，没有任何元素，默认排序准则； map&amp;lt;Key, Val&amp;gt; c(op)，产生一个空map，没有任何元素，以op为排序准则； map&amp;lt;Key, Val, op&amp;gt; c，建立一个空map，以op为排序准则； map&amp;lt;Key, Val&amp;gt; c">
 <meta name="keywords" content="C++标准库,STL,容器,map,multimap">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-map-multimap">
 <meta property="og:url" content="http://yoursite.com/2018/10/08/STL-map-multimap/index.html">
 <meta property="og:site_name" content="小师弟的私房">
+<meta property="og:description" content="map和multimap操作构造函数和析构函数 map&amp;lt;Key, Val&amp;gt; c，default构造函数，产生一个空map，没有任何元素，默认排序准则； map&amp;lt;Key, Val&amp;gt; c(op)，产生一个空map，没有任何元素，以op为排序准则； map&amp;lt;Key, Val, op&amp;gt; c，建立一个空map，以op为排序准则； map&amp;lt;Key, Val&amp;gt; c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T15:29:55.631Z">
+<meta property="og:updated_time" content="2018-10-09T03:58:39.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-map-multimap">
+<meta name="twitter:description" content="map和multimap操作构造函数和析构函数 map&amp;lt;Key, Val&amp;gt; c，default构造函数，产生一个空map，没有任何元素，默认排序准则； map&amp;lt;Key, Val&amp;gt; c(op)，产生一个空map，没有任何元素，以op为排序准则； map&amp;lt;Key, Val, op&amp;gt; c，建立一个空map，以op为排序准则； map&amp;lt;Key, Val&amp;gt; c">
 
 
 
@@ -358,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0字
+                  189字
                 </span>
               
 
@@ -395,7 +398,20 @@
       
 
       
-        
+        <h1 id="map和multimap操作"><a href="#map和multimap操作" class="headerlink" title="map和multimap操作"></a>map和multimap操作</h1><h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h2><ul>
+<li><code>map&lt;Key, Val&gt; c</code>，default构造函数，产生一个空map，没有任何元素，默认排序准则；</li>
+<li><code>map&lt;Key, Val&gt; c(op)</code>，产生一个空map，没有任何元素，以op为排序准则；</li>
+<li><code>map&lt;Key, Val, op&gt; c</code>，建立一个空map，以op为排序准则；</li>
+<li><code>map&lt;Key, Val&gt; c(c2)</code>，copy构造函数，建立c2的同型map并成为c2的一份拷贝；</li>
+<li><code>map&lt;Key, Val&gt; c = c2</code></li>
+<li><code>map&lt;Key, Val&gt; c(rv)</code>，move构造函数，取rvalue rv内容构造一个新的map（始自C++11）；</li>
+<li><code>map&lt;Key, Val&gt; c = rv</code></li>
+<li><code>map&lt;Key, Val&gt; c(beg, end)</code></li>
+<li><code>map&lt;Key, Val&gt; c(initlist)</code></li>
+<li><code>map&lt;Key, Val&gt; c = initlist</code></li>
+<li><code>c.~map()</code>，销毁所有元素，释放内存。</li>
+</ul>
+
       
     </div>
     
@@ -493,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +630,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#map和multimap操作"><span class="nav-number">1.</span> <span class="nav-text">map和multimap操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -632,7 +673,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.4k</span>
+    <span title="Site words total count">8.7k</span>
   
 </div>
 
@@ -651,7 +692,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.4k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
