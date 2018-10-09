@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="map和multimap操作构造函数和析构函数 map&amp;lt;Key, Val&amp;gt; c，default构造函数，产生一个空map，没有任何元素，默认排序准则； map&amp;lt;Key, Val&amp;gt; c(op)，产生一个空map，没有任何元素，以op为排序准则； map&amp;lt;Key, Val, op&amp;gt; c，建立一个空map，以op为排序准则； map&amp;lt;Key, Val&amp;gt; c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-09T03:58:39.827Z">
+<meta property="og:updated_time" content="2018-10-09T05:26:43.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-map-multimap">
 <meta name="twitter:description" content="map和multimap操作构造函数和析构函数 map&amp;lt;Key, Val&amp;gt; c，default构造函数，产生一个空map，没有任何元素，默认排序准则； map&amp;lt;Key, Val&amp;gt; c(op)，产生一个空map，没有任何元素，以op为排序准则； map&amp;lt;Key, Val, op&amp;gt; c，建立一个空map，以op为排序准则； map&amp;lt;Key, Val&amp;gt; c">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  189字
+                  1.1k字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -411,6 +411,61 @@
 <li><code>map&lt;Key, Val&gt; c = initlist</code></li>
 <li><code>c.~map()</code>，销毁所有元素，释放内存。</li>
 </ul>
+<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><ul>
+<li><code>c.key_comp()</code>，返回“比较准则”；</li>
+<li><code>c.value_comp()</code>，返回针对value的“比较准则“（和key_comp()相同）；</li>
+<li><code>c.empty()</code></li>
+<li><code>c.size()</code></li>
+<li><code>c.max_size()</code>，返回元素个数之最大可能量；</li>
+<li><code>c1 == c2</code></li>
+<li><code>c1 != c2</code></li>
+<li><code>c1 &lt; c2</code></li>
+<li><code>c1 &gt; c2</code></li>
+<li><code>c1 &lt;= c2</code></li>
+<li><code>c1 &gt;= c2</code></li>
+</ul>
+<h2 id="特殊的查找函数"><a href="#特殊的查找函数" class="headerlink" title="特殊的查找函数"></a>特殊的查找函数</h2><ul>
+<li><code>c.count(val)</code>，返回key为val的元素个数；</li>
+<li><code>c.find(val)</code>，返回key为val的第一个元素，若找不到返回end();</li>
+<li>针对已排序的容器。</li>
+<li><code>c.lower_bound(val)</code>，返回key &gt;= val的第一个元素位置；</li>
+<li><code>c.upper_bound(val)</code>，返回key &gt; val的第一个元素位置；</li>
+<li><code>c.equal_rangge(val)</code>，返回val可被安插的第一个位置和最后一个位置，即key == val的元素区间，返回的是一个pair。</li>
+</ul>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
+<li><code>c = c2</code></li>
+<li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
+<li><code>c = initlist</code></li>
+<li><code>c1.swap(c2)</code></li>
+<li><code>swap(c1, c2)</code></li>
+</ul>
+<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
+<ul>
+<li><code>c.begin()</code>，返回一个random-access iterator指向第一元素；</li>
+<li><code>c.end()</code>，返回一个random-access iterator指向最末元素的下一位置；</li>
+<li><code>c.cbegin()</code>，返回一个const random-access iterator指向第一元素；</li>
+<li><code>c.cend()</code>，返回一个const random-access iterator指向最末元素的下一位置；</li>
+<li><code>c.rbegin()</code>，返回一个reverse iterator指向反向迭代的第一元素；</li>
+<li><code>c.rend()</code>，返回一个reverse iterator指向反向迭代的最末元素的下一位置；</li>
+<li><code>c.crbegin()</code>，返回一个const reverse iterator指向反向迭代的第一元素；</li>
+<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；</li>
+</ul>
+<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><p>要修改元素的key，必须先移除拥有该key的元素，然后插入拥有新key/value的元素。</p>
+<ul>
+<li><code>c.insert(val)</code>，安插一个val拷贝，返回新元素位置，对map而言不论是否成功；</li>
+<li><code>c.insert(pos, val)</code>，安插一个val拷贝，返回新元素位置，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.insert(beg, end)</code></li>
+<li><code>c.insert(initlist)</code></li>
+<li><code>c.emplace(args)</code>，插入1个arg为初值的元素，并返回新元素的位置（始自C++11），对map而言不论是否成功；</li>
+<li><code>c.emplace_hint(pos, args)</code>，安插一个以args为初值的元素，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.erase(val)</code>，移除所有与val相等的元素，返回被移除的元素个数；</li>
+<li><code>c.erase(pos)</code>，移除iterator位置pos上的元素吧，无返回值；</li>
+<li><code>c.erase(beg, end)</code>，移除区间[beg, end)内的所有元素，无返回值；</li>
+<li><code>c.clear()</code>，移除元素，将容器清空。<br>上述操作函数的返回类型有些差异，这与set和multiset之间的情况完全相同。<br>有三种不同的方法可以将value传入map或multimap内：value_type、pair&lt;&gt;、make_pair&lt;&gt;。<h3 id="value-type"><a href="#value-type" class="headerlink" title="value_type"></a>value_type</h3>为了避免隐式转换，可以利用value_type明白传递正确类型。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt; coll;</span><br><span class="line">coll.insert(<span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt;::value_type(<span class="string">"IAJAOP"</span>, <span class="number">24.1</span>));</span><br><span class="line">coll.insert(<span class="keyword">decltype</span>(coll)::value_type(<span class="string">"娇Mei"</span>, <span class="number">24.1</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="pair-lt-gt"><a href="#pair-lt-gt" class="headerlink" title="pair&lt;&gt;"></a>pair&lt;&gt;</h3><p>第一个insert语句内的类型并不正确，所以会被转换为真正的元素类型。为了做到这一点，insert成员函数被定义为member template。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt; coll;</span><br><span class="line">coll.insert(<span class="built_in">std</span>::pair&lt;<span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt;(<span class="string">"IAJAOP"</span>, <span class="number">24.1</span>));</span><br><span class="line">coll.insert(<span class="built_in">std</span>::pair&lt;<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt;(<span class="string">"IAJAOP"</span>, <span class="number">24.1</span>));</span><br></pre></td></tr></table></figure></p>
+<h2 id="make-pair-lt-gt"><a href="#make-pair-lt-gt" class="headerlink" title="make_pair&lt;&gt;"></a>make_pair&lt;&gt;</h2><p>根据收到的两个实参构建出一个pair对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="built_in">std</span>::<span class="built_in">string</span>, <span class="keyword">float</span>&gt; coll;</span><br><span class="line">coll.insert()<span class="built_in">std</span>:make_pair(<span class="string">"IAJAOP"</span>, <span class="number">24.1</span>);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -639,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#map和multimap操作"><span class="nav-number">1.</span> <span class="nav-text">map和multimap操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#map和multimap操作"><span class="nav-number">1.</span> <span class="nav-text">map和multimap操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易型操作"><span class="nav-number">1.2.</span> <span class="nav-text">非更易型操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊的查找函数"><span class="nav-number">1.3.</span> <span class="nav-text">特殊的查找函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.4.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.5.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.6.</span> <span class="nav-text">安插和移除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#value-type"><span class="nav-number">1.6.1.</span> <span class="nav-text">value_type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pair-lt-gt"><span class="nav-number">1.6.2.</span> <span class="nav-text">pair&lt;&gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-pair-lt-gt"><span class="nav-number">1.7.</span> <span class="nav-text">make_pair&lt;&gt;</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -673,7 +728,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.7k</span>
+    <span title="Site words total count">9.6k</span>
   
 </div>
 
@@ -692,7 +747,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.7k字</span>
+  <span class="post-count">博客全站共9.6k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
