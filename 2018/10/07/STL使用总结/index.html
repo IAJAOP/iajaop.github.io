@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-09T05:26:50.894Z">
+<meta property="og:updated_time" content="2018-10-12T15:09:49.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL容器使用总结">
 <meta name="twitter:description" content="STL容器用来管理某类对象的集合。STL中可分为三类容器：序列式容器（Sequence）、关联式容器（Associative）、无序容器（Unordered）。不同类别容器彼此之间完全不同，有着不同的实现，彼此没有派生关系。  序列式容器通常被实现为array或linked list； 关联式容器通常被实现为binary tree； 无序容器通常被实现为hash table。  容器的共通能力三个">
@@ -451,9 +451,9 @@
 <h3 id="multimap"><a href="#multimap" class="headerlink" title="multimap"></a>multimap</h3><p>头文件<code>#include &lt;multimap&gt;</code><br>和map的唯一差别是，元素可以重复，也就是multimap允许其元素拥有相同的key。Multimap可被当作字典使用。</p>
 <h2 id="无序容器"><a href="#无序容器" class="headerlink" title="无序容器"></a>无序容器</h2><p>是一种无序集合，其内每个元素的位置无关紧要，唯一重要的是某个特定元素是否位于此集合内。通常以hash table实现，内部结构是一个”由linked list组成“的array。通过某个hash函数的运算，确定元素落于这个array的位置。<br>无序容器的主要优点是，查找速度可能快过关联式容器。<br>《C++标准库》第二版有4种无序容器，无序容器由TR1引入。</p>
 <h3 id="unordered-set"><a href="#unordered-set" class="headerlink" title="unordered_set"></a>unordered_set</h3><p>头文件<code>#include &lt;unordered_set&gt;</code><br>是无序元素的集合，每个元素只可以出现一次。</p>
-<h3 id="unordered-multiset"><a href="#unordered-multiset" class="headerlink" title="unordered_multiset"></a>unordered_multiset</h3><p>头文件<code>#include &lt;unordered_multiset&gt;</code><br>和unordered_set唯一差别是它允许元素重复出现。</p>
+<h3 id="unordered-multiset"><a href="#unordered-multiset" class="headerlink" title="unordered_multiset"></a>unordered_multiset</h3><p>头文件<code>#include &lt;unordered_set&gt;</code><br>和unordered_set唯一差别是它允许元素重复出现。</p>
 <h3 id="unordered-map"><a href="#unordered-map" class="headerlink" title="unordered_map"></a>unordered_map</h3><p>头文件<code>#include &lt;unordered_map&gt;</code><br>元素都是key/value pair，每个key只可以出现一次。</p>
-<h3 id="unordered-multimap"><a href="#unordered-multimap" class="headerlink" title="unordered_multimap"></a>unordered_multimap</h3><p>头文件<code>#include &lt;unordered_multimap&gt;</code><br>和unordered_map的唯一区别是允许key重复。</p>
+<h3 id="unordered-multimap"><a href="#unordered-multimap" class="headerlink" title="unordered_multimap"></a>unordered_multimap</h3><p>头文件<code>#include &lt;unordered_map&gt;</code><br>和unordered_map的唯一区别是允许key重复。</p>
 <h2 id="其他容器"><a href="#其他容器" class="headerlink" title="其他容器"></a>其他容器</h2><h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>头文件<code>include &lt;string&gt;</code><br>可以把string当作一种STL容器，很类似vector，但其元素都是字符。</p>
 <h3 id="寻常的C-Style-Array"><a href="#寻常的C-Style-Array" class="headerlink" title="寻常的C-Style Array"></a>寻常的C-Style Array</h3><p>由C/C++语言内核提供，是个type而不是个class。</p>
 <h2 id="容器适配"><a href="#容器适配" class="headerlink" title="容器适配"></a>容器适配</h2><p>容器适配是STL的一部分，是STL内核的外围。</p>
@@ -587,7 +587,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -609,7 +609,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -722,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.6k</span>
+    <span title="Site words total count">10.1k</span>
   
 </div>
 
@@ -741,7 +741,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.6k字</span>
+  <span class="post-count">博客全站共10.1k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
