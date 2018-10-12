@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="无序容器unordered_set、unordered_multiset、unordered_map、unordered_multimap分别被定义为namespace std内的class template：12345678910111213141516171819202122232425namespace std&amp;#123;	template &amp;lt;typename T,			  typen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-12T15:49:23.476Z">
+<meta property="og:updated_time" content="2018-10-12T16:05:14.547Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-Unordered Container ">
 <meta name="twitter:description" content="无序容器unordered_set、unordered_multiset、unordered_map、unordered_multimap分别被定义为namespace std内的class template：12345678910111213141516171819202122232425namespace std&amp;#123;	template &amp;lt;typename T,			  typen">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  460字
+                  940字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2分钟
+                  4分钟
                 </span>
               
             </div>
@@ -431,7 +431,62 @@
 <li><code>c.rehash(bnum)</code>，将容器rehash，使其bucket个数之少为bnum;</li>
 <li><code>c.reserve(num)</code>，将容器rehash，使其空间之少拥有num个元素（始自C++11）。</li>
 </ul>
-
+<h2 id="非更易操作"><a href="#非更易操作" class="headerlink" title="非更易操作"></a>非更易操作</h2><ul>
+<li><code>c.empty()</code></li>
+<li><code>c.size()</code></li>
+<li><code>c.max_size()</code></li>
+<li><code>c1 == c2</code></li>
+<li><code>c1 != c2</code></li>
+</ul>
+<h2 id="特殊的查找操作"><a href="#特殊的查找操作" class="headerlink" title="特殊的查找操作"></a>特殊的查找操作</h2><ul>
+<li><code>c.count(val)</code></li>
+<li><code>c.find(val)</code></li>
+<li><code>c.equal_range(val)</code></li>
+</ul>
+<h2 id="赋值操作"><a href="#赋值操作" class="headerlink" title="赋值操作"></a>赋值操作</h2><ul>
+<li><code>c = c2</code></li>
+<li><code>c = rv</code></li>
+<li><code>c = initlist</code></li>
+<li><code>c1.swap(c2)</code></li>
+<li><code>swap(c1, c2)</code></li>
+</ul>
+<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
+<ul>
+<li><code>c.begin()</code></li>
+<li><code>c.end()</code></li>
+<li><code>c.cbegin()</code></li>
+<li><code>c.cend()</code></li>
+<li><code>c.rbegin()</code></li>
+<li><code>c.rend()</code></li>
+<li><code>c.crbegin()</code></li>
+<li><code>c.crend()</code></li>
+</ul>
+<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><ul>
+<li><code>c.insert(val)</code>，安插一个val拷贝，返回新元素位置，对set而言不论是否成功；</li>
+<li><code>c.insert(pos, val)</code>，安插一个val拷贝，返回新元素位置，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.insert(beg, end)</code></li>
+<li><code>c.insert(initlist)</code></li>
+<li><code>c.emplace(args)</code>，插入1个arg为初值的元素，并返回新元素的位置（始自C++11），对set而言不论是否成功；</li>
+<li><code>c.emplace_hint(pos, args)</code>，安插一个以args为初值的元素，pos是个提示，指出安插动作的查找起点，可能会加快速度；</li>
+<li><code>c.erase(val)</code>，移除所有与val相等的元素，返回被移除的元素个数；</li>
+<li><code>c.erase(pos)</code>，移除iterator位置pos上的元素吧，无返回值；</li>
+<li><code>c.erase(beg, end)</code>，移除区间[beg, end)内的所有元素，无返回值；</li>
+<li><code>c.clear()</code>，移除元素，将容器清空。</li>
+</ul>
+<h2 id="Bucket接口"><a href="#Bucket接口" class="headerlink" title="Bucket接口"></a>Bucket接口</h2><ul>
+<li><code>c.bucket_count()</code>，返回当前的bucket个数；</li>
+<li><code>c.bucket(val)</code>，返回val将（或可能）被找到的那个bucket的编号；</li>
+<li><code>c.bucket_size(buckidx)</code>返回帝buckidx个bucket所含的元素个数；</li>
+<li><code>c.begin(buckidx)</code>，返回一个forward iterator，指向第buckidx个bucket中的第一元素；</li>
+<li><code>c.end(buckidx)</code>，返回一个forward iterator，指向第buckidx个bucket中的最末元素的下一位置；</li>
+<li><code>c.cbegin(buckidx)</code></li>
+<li><code>c.cend(buckidx)</code></li>
+</ul>
+<h2 id="将unordered-map作为Associative-Array"><a href="#将unordered-map作为Associative-Array" class="headerlink" title="将unordered_map作为Associative Array"></a>将unordered_map作为Associative Array</h2><ul>
+<li><code>c[key]</code>，返回一个reference指向带着key的元素，若不存在则安插一个带着key的元素，以默认构造函数初始化；</li>
+<li><code>c.at(key)</code>，返回一个reference指向带key的元素（始自C++11），若不存在则抛出异常。</li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2>
       
     </div>
     
@@ -657,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#无序容器"><span class="nav-number">1.</span> <span class="nav-text">无序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和控制Unordered容器"><span class="nav-number">1.1.</span> <span class="nav-text">创建和控制Unordered容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布局操作"><span class="nav-number">1.2.</span> <span class="nav-text">布局操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#无序容器"><span class="nav-number">1.</span> <span class="nav-text">无序容器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和控制Unordered容器"><span class="nav-number">1.1.</span> <span class="nav-text">创建和控制Unordered容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布局操作"><span class="nav-number">1.2.</span> <span class="nav-text">布局操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易操作"><span class="nav-number">1.3.</span> <span class="nav-text">非更易操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊的查找操作"><span class="nav-number">1.4.</span> <span class="nav-text">特殊的查找操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值操作"><span class="nav-number">1.5.</span> <span class="nav-text">赋值操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.6.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.7.</span> <span class="nav-text">安插和移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bucket接口"><span class="nav-number">1.8.</span> <span class="nav-text">Bucket接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将unordered-map作为Associative-Array"><span class="nav-number">1.9.</span> <span class="nav-text">将unordered_map作为Associative Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.10.</span> <span class="nav-text">异常处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -691,7 +746,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.1k</span>
+    <span title="Site words total count">10.6k</span>
   
 </div>
 
@@ -710,7 +765,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.1k字</span>
+  <span class="post-count">博客全站共10.6k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
