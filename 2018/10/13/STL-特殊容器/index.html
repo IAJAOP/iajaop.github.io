@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="stack核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue核心接口 q.push()，将一个元素放入queue； q.front()，返回队头元素； q.back()，返回队尾元素； q.pop()，从队头中移除元素。调用front()、b">
+<meta name="description" content="stack实现一个先进后出的stack。 核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue实现一个先进先出的queue，换句话说是一个典型的数据缓冲结构。 核心接口 q.push()，将一个元素放入queue； q.front()，返回队头">
 <meta name="keywords" content="C++标准库,STL,容器,stack,queue,priority_queue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL-特殊容器">
 <meta property="og:url" content="http://yoursite.com/2018/10/13/STL-特殊容器/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="stack核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue核心接口 q.push()，将一个元素放入queue； q.front()，返回队头元素； q.back()，返回队尾元素； q.pop()，从队头中移除元素。调用front()、b">
+<meta property="og:description" content="stack实现一个先进后出的stack。 核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue实现一个先进先出的queue，换句话说是一个典型的数据缓冲结构。 核心接口 q.push()，将一个元素放入queue； q.front()，返回队头">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-12T16:27:20.593Z">
+<meta property="og:updated_time" content="2018-10-14T13:24:28.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="STL-特殊容器">
-<meta name="twitter:description" content="stack核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue核心接口 q.push()，将一个元素放入queue； q.front()，返回队头元素； q.back()，返回队尾元素； q.pop()，从队头中移除元素。调用front()、b">
+<meta name="twitter:description" content="stack实现一个先进后出的stack。 核心接口 s.push()，将一个元素放入stack； s.top()，返回栈顶元素； s.pop()，从stack中移除元素。调用top()和pop()会导致不明确行为，需要检查容器是否为空。  queue实现一个先进先出的queue，换句话说是一个典型的数据缓冲结构。 核心接口 q.push()，将一个元素放入queue； q.front()，返回队头">
 
 
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  121字
+                  207字
                 </span>
               
 
@@ -398,18 +398,26 @@
       
 
       
-        <h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><h2 id="核心接口"><a href="#核心接口" class="headerlink" title="核心接口"></a>核心接口</h2><ul>
+        <h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><p>实现一个先进后出的stack。</p>
+<h2 id="核心接口"><a href="#核心接口" class="headerlink" title="核心接口"></a>核心接口</h2><ul>
 <li><code>s.push()</code>，将一个元素放入stack；</li>
 <li><code>s.top()</code>，返回栈顶元素；</li>
 <li><code>s.pop()</code>，从stack中移除元素。<br>调用top()和pop()会导致不明确行为，需要检查容器是否为空。</li>
 </ul>
-<h1 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h1><h2 id="核心接口-1"><a href="#核心接口-1" class="headerlink" title="核心接口"></a>核心接口</h2><ul>
+<h1 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h1><p>实现一个先进先出的queue，换句话说是一个典型的数据缓冲结构。</p>
+<h2 id="核心接口-1"><a href="#核心接口-1" class="headerlink" title="核心接口"></a>核心接口</h2><ul>
 <li><code>q.push()</code>，将一个元素放入queue；</li>
 <li><code>q.front()</code>，返回队头元素；</li>
 <li><code>q.back()</code>，返回队尾元素；</li>
 <li><code>q.pop()</code>，从队头中移除元素。<br>调用front()、back()和pop()会导致不明确行为，需要检查容器是否为空。</li>
 </ul>
-<h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1>
+<h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1><p>实现一个queue，其中的元素依优先级被读取。换句话说，priority queue内的元素已经根据其值进行了排序。</p>
+<h2 id="核心接口-2"><a href="#核心接口-2" class="headerlink" title="核心接口"></a>核心接口</h2><ul>
+<li><code>push()</code>，将一个元素放入priority_queue；</li>
+<li><code>top()</code></li>
+<li><code>pop()</code></li>
+</ul>
+
       
     </div>
     
@@ -639,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stack"><span class="nav-number">1.</span> <span class="nav-text">stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心接口"><span class="nav-number">1.1.</span> <span class="nav-text">核心接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queue"><span class="nav-number">2.</span> <span class="nav-text">queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心接口-1"><span class="nav-number">2.1.</span> <span class="nav-text">核心接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#priority-queue"><span class="nav-number">3.</span> <span class="nav-text">priority_queue</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#stack"><span class="nav-number">1.</span> <span class="nav-text">stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心接口"><span class="nav-number">1.1.</span> <span class="nav-text">核心接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#queue"><span class="nav-number">2.</span> <span class="nav-text">queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心接口-1"><span class="nav-number">2.1.</span> <span class="nav-text">核心接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#priority-queue"><span class="nav-number">3.</span> <span class="nav-text">priority_queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心接口-2"><span class="nav-number">3.1.</span> <span class="nav-text">核心接口</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -673,7 +681,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.7k</span>
+    <span title="Site words total count">10.8k</span>
   
 </div>
 
@@ -692,7 +700,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.7k字</span>
+  <span class="post-count">博客全站共10.8k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
