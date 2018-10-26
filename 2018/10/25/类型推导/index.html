@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++标准库,STL,容器,list," />
+  <meta name="keywords" content="C++11,auto,decltype," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
-<meta name="keywords" content="C++标准库,STL,容器,list">
+<meta name="description" content="autoauto的自动类型推导，用于从初始化表达式中推断出变量的数据类型。可以省去大量冗长的类型声明语句，比如下面的例子：在原来的C++中，使用vector的迭代器需要这样写：12vector&amp;lt;int&amp;gt; vec;vector&amp;lt;int&amp;gt;::iterator itr = vec.begin(); 看起来很冗长，现在可以这么写：12vector&amp;lt;int&amp;gt; vec;au">
+<meta name="keywords" content="C++11,auto,decltype">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL-list">
-<meta property="og:url" content="http://yoursite.com/2018/10/07/STL-list/index.html">
+<meta property="og:title" content="类型推导">
+<meta property="og:url" content="http://yoursite.com/2018/10/25/类型推导/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
+<meta property="og:description" content="autoauto的自动类型推导，用于从初始化表达式中推断出变量的数据类型。可以省去大量冗长的类型声明语句，比如下面的例子：在原来的C++中，使用vector的迭代器需要这样写：12vector&amp;lt;int&amp;gt; vec;vector&amp;lt;int&amp;gt;::iterator itr = vec.begin(); 看起来很冗长，现在可以这么写：12vector&amp;lt;int&amp;gt; vec;au">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-12T15:07:31.559Z">
+<meta property="og:updated_time" content="2018-10-26T09:03:23.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="STL-list">
-<meta name="twitter:description" content="list操作构造函数和析构函数 list&amp;lt;Elem&amp;gt; c，default构造函数，产生一个空list，没有任何元素； list&amp;lt;Elem&amp;gt; c(c2)，copy构造函数，建立c2的同型list并成为c2的一份拷贝； list&amp;lt;Elem&amp;gt; c = c2 list&amp;lt;Elem&amp;gt; c(rv)，move构造函数，取rvalue rv内容构造一个新的list（始">
+<meta name="twitter:title" content="类型推导">
+<meta name="twitter:description" content="autoauto的自动类型推导，用于从初始化表达式中推断出变量的数据类型。可以省去大量冗长的类型声明语句，比如下面的例子：在原来的C++中，使用vector的迭代器需要这样写：12vector&amp;lt;int&amp;gt; vec;vector&amp;lt;int&amp;gt;::iterator itr = vec.begin(); 看起来很冗长，现在可以这么写：12vector&amp;lt;int&amp;gt; vec;au">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/07/STL-list/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/25/类型推导/"/>
 
 
 
 
 
-  <title>STL-list | 小师弟的私房</title>
+  <title>类型推导 | 小师弟的私房</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/07/STL-list/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/25/类型推导/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">STL-list</h1>
+          <h1 class="post-title" itemprop="name headline">类型推导</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-07T23:00:17+08:00">
-                2018-10-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-25T22:43:35+08:00">
+                2018-10-25
               </time>
             
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.1k字
+                  698字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4分钟
+                  3分钟
                 </span>
               
             </div>
@@ -398,92 +398,21 @@
       
 
       
-        <h1 id="list操作"><a href="#list操作" class="headerlink" title="list操作"></a>list操作</h1><h2 id="构造函数和析构函数"><a href="#构造函数和析构函数" class="headerlink" title="构造函数和析构函数"></a>构造函数和析构函数</h2><ul>
-<li><code>list&lt;Elem&gt; c</code>，default构造函数，产生一个空list，没有任何元素；</li>
-<li><code>list&lt;Elem&gt; c(c2)</code>，copy构造函数，建立c2的同型list并成为c2的一份拷贝；</li>
-<li><code>list&lt;Elem&gt; c = c2</code></li>
-<li><code>list&lt;Elem&gt; c(rv)</code>，move构造函数，取rvalue rv内容构造一个新的list（始自C++11）；</li>
-<li><code>list&lt;Elem&gt; c = rv</code></li>
-<li><code>list&lt;Elem&gt; c(n)</code>，利用元素的default构造函数生成一个大小为n的list；</li>
-<li><code>list&lt;Elem&gt; c(n, elem)</code></li>
-<li><code>list&lt;Elem&gt; c(beg, end)</code></li>
-<li><code>list&lt;Elem&gt; c(initlist)</code></li>
-<li><code>list&lt;Elem&gt; c = initlist</code></li>
-<li><code>c.~list()</code>，销毁所有元素，释放内存。</li>
-</ul>
-<h2 id="非更易型操作"><a href="#非更易型操作" class="headerlink" title="非更易型操作"></a>非更易型操作</h2><ul>
-<li><code>c.empty()</code></li>
-<li><code>c.size()</code></li>
-<li><code>c.max_size()</code>，返回元素个数之最大可能量；</li>
-<li><code>c1 == c2</code></li>
-<li><code>c1 != c2</code></li>
-<li><code>c1 &lt; c2</code></li>
-<li><code>c1 &gt; c2</code></li>
-<li><code>c1 &lt;= c2</code></li>
-<li><code>c1 &gt;= c2</code></li>
-</ul>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><ul>
-<li><code>c = c2</code></li>
-<li><code>c = rv</code>，将rvalue rv的所有元素以move assign方式给予c（始自C++11）；</li>
-<li><code>c = initlist</code></li>
-<li><code>c.assign(n, elem)</code>， 复制n个elem，赋值c；</li>
-<li><code>c.assign(beg, end)</code></li>
-<li><code>c.assign(initlist)</code></li>
-<li><code>c1.swap(c2)</code></li>
-<li><code>swap(c1, c2)</code></li>
-</ul>
-<h2 id="元素访问"><a href="#元素访问" class="headerlink" title="元素访问"></a>元素访问</h2><p>访问list的所有元素，必须使用rang-base for循环，特定操作函数或迭代器。<br>List不支持随机访问。</p>
+        <h1 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h1><p>auto的自动类型推导，用于从初始化表达式中推断出变量的数据类型。<br>可以省去大量冗长的类型声明语句，比如下面的例子：<br>在原来的C++中，使用vector的迭代器需要这样写：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator itr = vec.begin();</span><br></pre></td></tr></table></figure></p>
+<p>看起来很冗长，现在可以这么写：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line"><span class="keyword">auto</span> iter = vec.begin();</span><br></pre></td></tr></table></figure></p>
+<p>还可以运用在泛型编程中，简化操作，比如：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> S&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> S&amp; para)</span></span>&#123;</span><br><span class="line">	T val = para.makeObj();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个函数的功能是使用para的makeObj产生的实例来进行某些操作。但是现在引入了泛型编程，para的类型不同，那么makeObj返回的类型也不同，所以需要引入两个泛型。我们可以做如下简化：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> S&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> S&amp; para)</span></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> val = para.makeObj();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如此就可以省去一个泛型，让编译器自动推导val的类型。此外，C++11还允许对函数的返回值进行类型推导。<br>当然有几点需要注意：</p>
 <ul>
-<li><code>c.front()</code>，返回第一元素，不检查；</li>
-<li><code>c.back()</code>，返回最末元素，不检查。</li>
-</ul>
-<h2 id="迭代器相关函数"><a href="#迭代器相关函数" class="headerlink" title="迭代器相关函数"></a>迭代器相关函数</h2><p>带const的都始自C++11。</p>
-<ul>
-<li><code>c.begin()</code>，返回一个random-access iterator指向第一元素；</li>
-<li><code>c.end()</code>，返回一个random-access iterator指向最末元素的下一位置；</li>
-<li><code>c.cbegin()</code>，返回一个const random-access iterator指向第一元素；</li>
-<li><code>c.cend()</code>，返回一个const random-access iterator指向最末元素的下一位置；</li>
-<li><code>c.rbegin()</code>，返回一个reverse iterator指向反向迭代的第一元素；</li>
-<li><code>c.rend()</code>，返回一个reverse iterator指向反向迭代的最末元素的下一位置；</li>
-<li><code>c.crbegin()</code>，返回一个const reverse iterator指向反向迭代的第一元素；</li>
-<li><code>c.crend()</code>，返回一个const reverse iterator指向反向迭代的最末元素的下一位置；</li>
-</ul>
-<h2 id="安插和移除元素"><a href="#安插和移除元素" class="headerlink" title="安插和移除元素"></a>安插和移除元素</h2><ul>
-<li><code>c.push_back(elem)</code>，附加一个elem的拷贝于末尾；</li>
-<li><code>c.pop_back()</code>，移除最后一个元素，需检查list是否为空，不返回；</li>
-<li><code>c.push_front(elem)</code>，在头部插入elem的一个拷贝；</li>
-<li><code>c.pop_front()</code>，移除第一元素，但不返回；</li>
-<li><code>c.insert(pos, elem)</code>，在iterator位置pos之前方插入1个elem拷贝，并返回新元素的位置；</li>
-<li><code>c.insert(pos, n, elem)</code>，在iterator位置pos之前方插入n个elem拷贝，并返回第一个新元素的位置（n == 0，返回pos）；</li>
-<li><code>c.insert(pos, beg, end)</code></li>
-<li><code>c.insert(pos, initlist)</code></li>
-<li><code>c.emplace(pos, args)</code>，在iterator位置pos之前方插入1个arg为初值的元素，并返回新元素的位置（始自C++11），相对于insert函数执行构造函数、拷贝构造函数，emplace只执行构造函数；</li>
-<li><code>c.emplace_back(args)</code>，附加一个以args为初值的元素于末尾，不返回；</li>
-<li><code>c.emplace_front(args</code>，附加一个以args为初值的元素于头部，不返回；</li>
-<li><code>c.erase(pos)</code>，移除iterator位置pos上的元素，返回下一元素位置；</li>
-<li><code>c.erase(beg, end)</code></li>
-<li><code>c.remove(val)</code>，移除所有其值为val的元素；</li>
-<li><p><code>c.remove_if(op)</code>，移除所有“造成op(elem)结果为true“的元素；</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coll.remove_if([] (<span class="keyword">int</span> i)&#123;<span class="keyword">return</span> i % <span class="number">2</span> == <span class="number">0</span>;&#125;);</span><br><span class="line"><span class="comment">//用一个lambda找出应该被移除的元素。</span></span><br></pre></td></tr></table></figure>
+<li>auto推导函数参数，有些编译器无法通过编译；</li>
+<li>auto推导非静态成员变量，无法通过编译；</li>
+<li>auto推导数组，无法通过编译；</li>
+<li>auto推导模版参数（实例化），无法通过编译。<br>例如：<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">auto</span> x = <span class="number">1</span>)</span></span>&#123;&#125; 	<span class="comment">//1.err</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">A</span>&#123;</span></span><br><span class="line">	<span class="keyword">auto</span> val = <span class="number">1994</span>; 	<span class="comment">//2.err</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> arr[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">auto</span> x = arr; 		<span class="comment">//ok</span></span><br><span class="line">	<span class="keyword">auto</span> y[<span class="number">3</span>] = arr; 	<span class="comment">//3.err;</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">auto</span>&gt; vec = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;; 	<span class="comment">//4.err</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>c.resize(n)</code>，将元素数量改为n，若size()变大，多出来的新元素都需以default构造函数完成初始化；</p>
-</li>
-<li><code>c.resize(n, elem)</code>，将元素数量改为n，若size()变大，多出来的新元素都是elem的拷贝；</li>
-<li><code>c.clear()</code>，移除元素，将容器清空。</li>
 </ul>
-<h2 id="其他改变元素的操作"><a href="#其他改变元素的操作" class="headerlink" title="其他改变元素的操作"></a>其他改变元素的操作</h2><ul>
-<li><code>c.unique()</code>，若存在若干相邻而数值相同的元素，则移除重复元素，只留一个；</li>
-<li><code>c.unique(op)</code>，若存在若干相邻元素都使op()的结果为true，则移除重复元素，只留一个；</li>
-<li><code>splice(pos, c2)</code>，将c2内的所有元素转移（move）到c之内、迭代器pos之前</li>
-<li><code>splice(pos, c2, c2pos)</code></li>
-<li><code>c.splice(pos, c2, c2beg, c2end)</code></li>
-<li><code>c.sort()</code>，以operator &lt; 为准则对所有元素排序；</li>
-<li><code>c.sort(op)</code>以op()准则对所有元素排序；</li>
-<li><code>c.merge(c2)</code>，假设c和c2容器都包含op()准则下的已排序元素，将c2的全部元素转移到c，并到证合并后的list仍为已排序；</li>
-<li><code>c.merge(c2, op)</code>，假设c和c2容器都包含已排序元素，将c2的全部元素转移到c，并保证合并后的list在op()准则下仍为已排序；</li>
-<li><code>c.reverse()</code>，将所有元素反序。</li>
-</ul>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>List对于异常安全性提供了最佳支持，所有操作都是不成功便成仁：要么成功，要么无效。</p>
+<h1 id="decltype"><a href="#decltype" class="headerlink" title="decltype"></a>decltype</h1><p>decltype可以从一个变量或者表达式中得到其类型，实际上有点像auto的反函数。基本应用如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">decltype</span>(num) x = <span class="number">1994</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(x).name() &lt;&lt; <span class="built_in">endl</span>; 	<span class="comment">//打印x的类型，"i"</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">float</span> a = <span class="number">1.0</span>;</span><br><span class="line">	<span class="keyword">double</span> b = <span class="number">2.0</span>;</span><br><span class="line">	<span class="keyword">decltype</span>(a + b) c;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(c).name() &lt;&lt; <span class="built_in">endl</span>;	<span class="comment">//打印c的类型，"d"</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">	typedef decltype(vec.begin()) vectype;</span><br><span class="line">    vectype itr;</span><br><span class="line">    <span class="keyword">for</span>(itr = vec.begin(); itr != vec.end(); ++itr)&#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; *itr &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">enum</span> &#123;OK, Error, Warning&#125;flag;    <span class="comment">//匿名的枚举变量</span></span><br><span class="line">    <span class="keyword">decltype</span>(flag) temp = Error;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; temp &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>和函数返回值后置语法结合起来，可以有以下应用：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//int func(int, int);</span></span><br><span class="line"><span class="comment">//auto func2(int, int) -&gt; int;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line">auto sum(const T1&amp; t1, const T2&amp; t2) -&gt; decltype(t1 + t2)&#123;</span><br><span class="line">	<span class="keyword">return</span> t1 + t2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line">auto mul(const T1&amp; t1, const const T2&amp; t2) -&gt; decltype(t1 * t2)&#123;</span><br><span class="line">	<span class="keyword">return</span> t1 * t2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">auto</span> b = <span class="number">6L</span>;</span><br><span class="line">	<span class="keyword">auto</span> pi = <span class="number">3.14</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">auto</span> c = mul(sum(a, b), pi);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//28.26</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>灵活运用auto和decltype来简化泛型编程。</p>
 
       
     </div>
@@ -501,13 +430,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C-标准库/" rel="tag"># C++标准库</a>
+            <a href="/tags/C-11/" rel="tag"># C++11</a>
           
-            <a href="/tags/STL/" rel="tag"># STL</a>
+            <a href="/tags/auto/" rel="tag"># auto</a>
           
-            <a href="/tags/容器/" rel="tag"># 容器</a>
-          
-            <a href="/tags/list/" rel="tag"># list</a>
+            <a href="/tags/decltype/" rel="tag"># decltype</a>
           
         </div>
       
@@ -520,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/07/STL-deque/" rel="next" title="STL-deque">
-                <i class="fa fa-chevron-left"></i> STL-deque
+              <a href="/2018/10/15/Lambda表达式/" rel="next" title="Lambda表达式">
+                <i class="fa fa-chevron-left"></i> Lambda表达式
               </a>
             
           </div>
@@ -529,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/08/STL-forward-list/" rel="prev" title="STL-forward_list">
-                STL-forward_list <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -714,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#list操作"><span class="nav-number">1.</span> <span class="nav-text">list操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数和析构函数"><span class="nav-number">1.1.</span> <span class="nav-text">构造函数和析构函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非更易型操作"><span class="nav-number">1.2.</span> <span class="nav-text">非更易型操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值"><span class="nav-number">1.3.</span> <span class="nav-text">赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素访问"><span class="nav-number">1.4.</span> <span class="nav-text">元素访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器相关函数"><span class="nav-number">1.5.</span> <span class="nav-text">迭代器相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安插和移除元素"><span class="nav-number">1.6.</span> <span class="nav-text">安插和移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他改变元素的操作"><span class="nav-number">1.7.</span> <span class="nav-text">其他改变元素的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.8.</span> <span class="nav-text">异常处理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#auto"><span class="nav-number">1.</span> <span class="nav-text">auto</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#decltype"><span class="nav-number">2.</span> <span class="nav-text">decltype</span></a></li></ol></div>
             
 
           </div>
