@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="常量表达式constexpr">
+<meta name="description" content="常量表达式constexpr常量表达式主要是允许一些计算发生在编译时，即发生在代码编译而不是运行的时候。这是一个很大的优化，可以使一些事在编译时做，且只做一次，而不是每次程序运行时都计算。使用constexper，可以创建一个编译时的函数：12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;constexpr int GetC">
 <meta name="keywords" content="C++11,constexpr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常量表达式constexpr">
 <meta property="og:url" content="http://yoursite.com/2018/10/30/常量表达式constexpr/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="常量表达式constexpr">
+<meta property="og:description" content="常量表达式constexpr常量表达式主要是允许一些计算发生在编译时，即发生在代码编译而不是运行的时候。这是一个很大的优化，可以使一些事在编译时做，且只做一次，而不是每次程序运行时都计算。使用constexper，可以创建一个编译时的函数：12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;constexpr int GetC">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T03:24:40.485Z">
+<meta property="og:updated_time" content="2018-10-30T07:12:46.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常量表达式constexpr">
-<meta name="twitter:description" content="常量表达式constexpr">
+<meta name="twitter:description" content="常量表达式constexpr常量表达式主要是允许一些计算发生在编译时，即发生在代码编译而不是运行的时候。这是一个很大的优化，可以使一些事在编译时做，且只做一次，而不是每次程序运行时都计算。使用constexper，可以创建一个编译时的函数：12345678910111213#include &amp;lt;iostream&amp;gt;using namespace std;constexpr int GetC">
 
 
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  6字
+                  368字
                 </span>
               
 
@@ -398,7 +398,18 @@
       
 
       
-        <h1 id="常量表达式constexpr"><a href="#常量表达式constexpr" class="headerlink" title="常量表达式constexpr"></a>常量表达式constexpr</h1>
+        <h1 id="常量表达式constexpr"><a href="#常量表达式constexpr" class="headerlink" title="常量表达式constexpr"></a>常量表达式constexpr</h1><p>常量表达式主要是允许一些计算发生在编译时，即发生在代码编译而不是运行的时候。这是一个很大的优化，可以使一些事在编译时做，且只做一次，而不是每次程序运行时都计算。<br>使用constexper，可以创建一个编译时的函数：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">GetConst</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1994</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> arr[GetConst()] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">enum</span> <span class="class"><span class="keyword">class</span> <span class="title">S</span> :</span> <span class="keyword">int</span>&#123;e1 = GetConst(), e2&#125;;</span><br><span class="line">    <span class="keyword">constexpr</span>  <span class="keyword">int</span> num = GetConst();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>constexpr函数限制：</p>
+<ul>
+<li>函数中只能有一个return语句（极少特例）；</li>
+<li>函数必须有返回值，不能事void函数；</li>
+<li>在使用前必须已有定义；</li>
+<li>return返回语句表达式中不能使用非常量表达式的函数、全局数据，且必须事一个常量表达式；</li>
+<li>一个constexpr函数，只允许包含一行可执行代码，但允许包含typedef、using指令、静态断言等。<br>常量表达式的构造函数有以下限制：</li>
+<li>函数体必须为空；</li>
+<li>初始化列表只能有常量表达式来赋值。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    constexpr Date(int y, int m, int d) : year(y), month(m), day(d)&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">GetYear</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> year;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">GetMonth</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> month;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">constexpr</span> <span class="keyword">int</span> <span class="title">GetDay</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> day;&#125;;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> year;</span><br><span class="line">    <span class="keyword">int</span> month;</span><br><span class="line">    <span class="keyword">int</span> day;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">constexpr</span> Date bir &#123;<span class="number">1994</span>, <span class="number">2</span>, <span class="number">21</span>&#125;;</span><br><span class="line">    <span class="keyword">constexpr</span> <span class="keyword">int</span> bM = bir.GetMonth();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; bM &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
     
@@ -439,6 +450,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/30/用户定义字面量/" rel="prev" title="用户定义字面量">
+                用户定义字面量 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -519,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -541,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -654,7 +669,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.6k</span>
+    <span title="Site words total count">18.1k</span>
   
 </div>
 
@@ -673,7 +688,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共16.6k字</span>
+  <span class="post-count">博客全站共18.1k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
