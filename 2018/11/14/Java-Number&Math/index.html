@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Number,Math," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
+<meta name="description" content="Java-Number&amp;amp;Math类Number类Java有八种基本数据类型，六种数字类型（四个整数型（默认是int），两个浮点型（默认是double）），一种字符类型，一种布尔型。  byte，8位有符号，范围时-128（-2^7）到127（2^-1）； short，16位有符号，范围-32768（-2^15）到32767（2^15-1）； int，32位有符号，范围-2^31到2^31-">
+<meta name="keywords" content="Java,Number,Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java-Number-Math">
+<meta property="og:title" content="Java-Number&amp;Math">
 <meta property="og:url" content="http://yoursite.com/2018/11/14/Java-Number&Math/index.html">
 <meta property="og:site_name" content="小师弟的私房">
+<meta property="og:description" content="Java-Number&amp;amp;Math类Number类Java有八种基本数据类型，六种数字类型（四个整数型（默认是int），两个浮点型（默认是double）），一种字符类型，一种布尔型。  byte，8位有符号，范围时-128（-2^7）到127（2^-1）； short，16位有符号，范围-32768（-2^15）到32767（2^15-1）； int，32位有符号，范围-2^31到2^31-">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-14T13:22:15.242Z">
+<meta property="og:updated_time" content="2018-11-15T08:27:48.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java-Number-Math">
+<meta name="twitter:title" content="Java-Number&amp;Math">
+<meta name="twitter:description" content="Java-Number&amp;amp;Math类Number类Java有八种基本数据类型，六种数字类型（四个整数型（默认是int），两个浮点型（默认是double）），一种字符类型，一种布尔型。  byte，8位有符号，范围时-128（-2^7）到127（2^-1）； short，16位有符号，范围-32768（-2^15）到32767（2^15-1）； int，32位有符号，范围-2^31到2^31-">
 
 
 
@@ -122,7 +126,7 @@
 
 
 
-  <title>Java-Number-Math | 小师弟的私房</title>
+  <title>Java-Number&Math | 小师弟的私房</title>
   
 
 
@@ -286,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java-Number-Math</h1>
+          <h1 class="post-title" itemprop="name headline">Java-Number&Math</h1>
         
 
         <div class="post-meta">
@@ -308,6 +312,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -335,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0字
+                  782字
                 </span>
               
 
@@ -351,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  3分钟
                 </span>
               
             </div>
@@ -372,7 +398,38 @@
       
 
       
-        
+        <h1 id="Java-Number-amp-Math类"><a href="#Java-Number-amp-Math类" class="headerlink" title="Java-Number&amp;Math类"></a>Java-Number&amp;Math类</h1><h2 id="Number类"><a href="#Number类" class="headerlink" title="Number类"></a>Number类</h2><p>Java有八种基本数据类型，六种数字类型（四个整数型（默认是int），两个浮点型（默认是double）），一种字符类型，一种布尔型。</p>
+<ul>
+<li>byte，8位有符号，范围时-128（-2^7）到127（2^-1）；</li>
+<li>short，16位有符号，范围-32768（-2^15）到32767（2^15-1）；</li>
+<li>int，32位有符号，范围-2^31到2^31-1；</li>
+<li>long，64位有符号，范围-2^63到2^63-1；</li>
+<li>float，单精度32位有符号；</li>
+<li>double，双精度64位有符号；</li>
+<li>char，单一的16位Unicode字符；</li>
+<li>boolean，只有true和false。<br>然而在实际开发过程中，经常需要使用对象而不是内置数据类型。所以，Java为每一个内置数据类型提供了对应的包装类。<br>Byte，Short，Integer，Long，Float，Double都是抽象类Number的子类。这种由编译器特别支持的包装称为装箱，所以当内置数据类型被当作对象使用的时候，编译器会把内置类型装箱为包装类。相似的，编译器也可以把一个对象拆箱为内置类型。Number类属于java.lang包。<br>使用Integer对象的实例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumberEx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer integer = <span class="number">1994</span>;</span><br><span class="line">        integer += <span class="number">24</span>;</span><br><span class="line">        System.out.println(integer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
+<li><code>xxxValue()</code>，例如<code>byteValue()</code>，不接受任何参数，以byte形式返回指定的数值；</li>
+<li><code>compareTo()</code>，用于两个相同数据类型的比较；</li>
+<li><code>equals()</code>，用于判断Number对象与方法的参数是否相等；</li>
+<li><code>valueOf()</code>，用于返回给定参数的原生Number对象值，参数可以是原生数据类型，String等；</li>
+<li><code>toString()</code>，返回一个字符串表示的Number对象值；</li>
+<li><code>parseInt()</code>，将字符串参数作为有符号的十进制整数进行解析；<br>实例如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NumberEx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer n = <span class="number">1994</span>;</span><br><span class="line">        System.out.println(n.doubleValue());        <span class="comment">// 1994.0</span></span><br><span class="line">        System.out.println(n.compareTo(<span class="number">2018</span>));      <span class="comment">// 与参数相等返回0，小于返回-1，大于返回1</span></span><br><span class="line">        System.out.println(n.equals(<span class="number">1993</span>));         <span class="comment">// 相等返回true，不等返回false</span></span><br><span class="line">        n = Integer.valueOf(<span class="number">1993</span>);</span><br><span class="line">        System.out.println(n);                      <span class="comment">// 1993</span></span><br><span class="line">        n = Integer.valueOf(<span class="string">"1994"</span>, <span class="number">16</span>);   <span class="comment">// 参数可以有两个，第二个用于指定进制数</span></span><br><span class="line">        System.out.println(n);                      <span class="comment">// 6548</span></span><br><span class="line">        System.out.println(n.toString());           <span class="comment">// 6548</span></span><br><span class="line">        System.out.println(Double.toString(<span class="number">1994.02</span>));   <span class="comment">// 1994.02</span></span><br><span class="line">        <span class="keyword">int</span> x = Integer.parseInt(<span class="string">"666"</span>);</span><br><span class="line">        <span class="keyword">int</span> y = Integer.parseInt(<span class="string">"0101"</span>, <span class="number">2</span>);        <span class="comment">// 参数可以有两个，第二个用于指定进制数</span></span><br><span class="line">        System.out.println(x);                      <span class="comment">// 666</span></span><br><span class="line">        System.out.println(y);                      <span class="comment">// 5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><p>Java 的 Math 包含了用于执行基本数学运算的属性和方法，如初等指数、对数、平方根和三角函数。<br>Math 的方法都被定义为 static 形式，通过 Math 类可以在主函数中直接调用。</p>
+<h3 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
+<li><code>abs()</code>，返回参数的绝对值，参数可以是byte、short、int、long、float、double类型；</li>
+<li><code>ceil()</code>，对一个数进行上舍入，返回值大于或等于给定参数；</li>
+<li><code>floor()</code>，对一个数进行下舍入，返回值小于或等于给定参数；</li>
+<li><code>rint()</code>，返回最接近参数的整数；</li>
+<li><code>round()</code>，返回一个最接近的int、long型值；</li>
+<li><code>min()</code>，<code>max()</code>，返回两个参数的最小值或最大值；</li>
+<li><code>random()</code>，返回一个随机数，随机数范围为0.0到1.0；</li>
+</ul>
+
       
     </div>
     
@@ -387,6 +444,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Number/" rel="tag"># Number</a>
+          
+            <a href="/tags/Math/" rel="tag"># Math</a>
+          
+        </div>
+      
 
       
       
@@ -396,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/Java数组-Arrays-Array/" rel="next" title="Java-数组&Array&Arrays">
-                <i class="fa fa-chevron-left"></i> Java-数组&Array&Arrays
+              <a href="/2018/11/14/Java-数组&Arrays&Array/" rel="next" title="Java数组&Array&Arrays">
+                <i class="fa fa-chevron-left"></i> Java数组&Array&Arrays
               </a>
             
           </div>
@@ -456,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -568,6 +644,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-Number-amp-Math类"><span class="nav-number">1.</span> <span class="nav-text">Java-Number&amp;Math类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Number类"><span class="nav-number">1.1.</span> <span class="nav-text">Number类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math"><span class="nav-number">1.2.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">常用方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -595,7 +687,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.7k</span>
+    <span title="Site words total count">20.5k</span>
   
 </div>
 
@@ -614,7 +706,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共19.7k字</span>
+  <span class="post-count">博客全站共20.5k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
