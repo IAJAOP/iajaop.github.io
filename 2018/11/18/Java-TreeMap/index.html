@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,Vector," />
+  <meta name="keywords" content="Java,集合,TreeMap," />
 
 
 
@@ -79,15 +79,18 @@
 
 
 
-<meta name="keywords" content="Java,Vector">
+<meta name="description" content="TreeMapTreeMap简介TreeMap是一个有序的key-value集合，基于红黑树（Red-Black tree）的 NavigableMap实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator进行排序，具体取决于使用的构造方法。红黑树是：  根节点是黑色； 每个节点都只能是红色或者黑色； 每个叶节点（NIL节点，空节点）是黑色的；  如果一个节点是红色">
+<meta name="keywords" content="Java,集合,TreeMap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java-集合之Vector">
-<meta property="og:url" content="http://yoursite.com/2018/11/17/Java-集合之Vector/index.html">
+<meta property="og:title" content="Java-TreeMap">
+<meta property="og:url" content="http://yoursite.com/2018/11/18/Java-TreeMap/index.html">
 <meta property="og:site_name" content="小师弟的私房">
+<meta property="og:description" content="TreeMapTreeMap简介TreeMap是一个有序的key-value集合，基于红黑树（Red-Black tree）的 NavigableMap实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator进行排序，具体取决于使用的构造方法。红黑树是：  根节点是黑色； 每个节点都只能是红色或者黑色； 每个叶节点（NIL节点，空节点）是黑色的；  如果一个节点是红色">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-17T10:52:25.251Z">
+<meta property="og:updated_time" content="2018-11-18T10:40:41.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java-集合之Vector">
+<meta name="twitter:title" content="Java-TreeMap">
+<meta name="twitter:description" content="TreeMapTreeMap简介TreeMap是一个有序的key-value集合，基于红黑树（Red-Black tree）的 NavigableMap实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator进行排序，具体取决于使用的构造方法。红黑树是：  根节点是黑色； 每个节点都只能是红色或者黑色； 每个叶节点（NIL节点，空节点）是黑色的；  如果一个节点是红色">
 
 
 
@@ -117,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/17/Java-集合之Vector/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/18/Java-TreeMap/"/>
 
 
 
 
 
-  <title>Java-集合之Vector | 小师弟的私房</title>
+  <title>Java-TreeMap | 小师弟的私房</title>
   
 
 
@@ -270,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Java-集合之Vector/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/18/Java-TreeMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -287,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java-集合之Vector</h1>
+          <h1 class="post-title" itemprop="name headline">Java-TreeMap</h1>
         
 
         <div class="post-meta">
@@ -299,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-17T18:51:44+08:00">
-                2018-11-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-18T18:34:40+08:00">
+                2018-11-18
               </time>
             
 
@@ -358,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0字
+                  425字
                 </span>
               
 
@@ -395,7 +398,29 @@
       
 
       
-        
+        <h1 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h1><h2 id="TreeMap简介"><a href="#TreeMap简介" class="headerlink" title="TreeMap简介"></a>TreeMap简介</h2><p>TreeMap是一个有序的key-value集合，基于红黑树（Red-Black tree）的 NavigableMap实现。该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator进行排序，具体取决于使用的构造方法。<br>红黑树是：</p>
+<ol>
+<li>根节点是黑色；</li>
+<li>每个节点都只能是红色或者黑色；</li>
+<li>每个叶节点（NIL节点，空节点）是黑色的； </li>
+<li>如果一个节点是红色的，则它两个子节点都是黑色的，也就是说在一条路径上不能出现两个红色的节点； </li>
+<li>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。</li>
+</ol>
+<p>TreeMap：</p>
+<ul>
+<li>继承AbstactMap类，则TreeMap是一个Map，具体key-value特性的集合；</li>
+<li>实现了Navigable接口，意味着它支持一系列的导航方法，如有序的key返回；</li>
+<li>实现了Cloneable接口，意味着它能被克隆；</li>
+<li>实现了Serializable接口，意味着它支持序列化。</li>
+</ul>
+<p>TreeMap特性：</p>
+<ul>
+<li>TreeMap是根据key进行排序的，它的排序和定位需要依赖比较器或覆写Comparable接口，也因此不需要key覆写hashCode方法和equals方法，就可以排除掉重复的key，而HashMap的key则需要通过覆写hashCode方法和equals方法来确保没有重复的key；</li>
+<li>TreeMap的查询、插入、删除效率均没有HashMap高，一般只有要对key排序时才使用TreeMap；</li>
+<li>TreeMap的key不能为null，而HashMap的key可以为null；</li>
+<li>TreeMap不是同步的。如果多个线程同时访问一个映射，并且其中至少一个线程从结构上修改了该映射，则其必须 外部同步。</li>
+</ul>
+<h2 id="TreeMap常用方法"><a href="#TreeMap常用方法" class="headerlink" title="TreeMap常用方法"></a>TreeMap常用方法</h2>
       
     </div>
     
@@ -414,7 +439,9 @@
           
             <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/Vector/" rel="tag"># Vector</a>
+            <a href="/tags/集合/" rel="tag"># 集合</a>
+          
+            <a href="/tags/TreeMap/" rel="tag"># TreeMap</a>
           
         </div>
       
@@ -427,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/17/Java-集合之LinkedList/" rel="next" title="Java-集合之LinkedList">
-                <i class="fa fa-chevron-left"></i> Java-集合之LinkedList
+              <a href="/2018/11/18/Java-HashMap/" rel="next" title="Java-HashMap">
+                <i class="fa fa-chevron-left"></i> Java-HashMap
               </a>
             
           </div>
@@ -487,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -507,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -529,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -599,6 +635,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TreeMap"><span class="nav-number">1.</span> <span class="nav-text">TreeMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeMap简介"><span class="nav-number">1.1.</span> <span class="nav-text">TreeMap简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeMap常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">TreeMap常用方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -626,7 +678,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.6k</span>
+    <span title="Site words total count">24.5k</span>
   
 </div>
 
@@ -645,7 +697,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.6k字</span>
+  <span class="post-count">博客全站共24.5k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

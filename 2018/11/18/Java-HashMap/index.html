@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Java,集合,ArrayList," />
+  <meta name="keywords" content="Java,集合,HashMap," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="ArrayList解决运行时动态更改数组的问题，采用ArrayList类。下面声明一个保存Person对下岗的数组列表：123ArrayList&amp;lt;Person&amp;gt; person = new ArrayList&amp;lt;Person&amp;gt;();//Java SE 7ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); Array">
-<meta name="keywords" content="Java,集合,ArrayList">
+<meta name="description" content="HashMapHashMap简介HashMap是基于哈希表的Map实现的的，一个Key对应一个Value，允许使用null键和null值,不保证映射的顺序，特别是它不保证该顺序恒久不变，即当哈希表中的条目数超出了加载因子与当前容量的乘积时的时候，哈希表进行rehash操作（即重建内部数据结构），此时映射顺序可能会被打乱，也不是同步的。HashMap存放元素是通过哈希算法将其中的元素散列的存放在各个">
+<meta name="keywords" content="Java,集合,HashMap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java-ArrayList">
-<meta property="og:url" content="http://yoursite.com/2018/11/17/Java-集合之ArrayList/index.html">
+<meta property="og:title" content="Java-HashMap">
+<meta property="og:url" content="http://yoursite.com/2018/11/18/Java-HashMap/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="ArrayList解决运行时动态更改数组的问题，采用ArrayList类。下面声明一个保存Person对下岗的数组列表：123ArrayList&amp;lt;Person&amp;gt; person = new ArrayList&amp;lt;Person&amp;gt;();//Java SE 7ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); Array">
+<meta property="og:description" content="HashMapHashMap简介HashMap是基于哈希表的Map实现的的，一个Key对应一个Value，允许使用null键和null值,不保证映射的顺序，特别是它不保证该顺序恒久不变，即当哈希表中的条目数超出了加载因子与当前容量的乘积时的时候，哈希表进行rehash操作（即重建内部数据结构），此时映射顺序可能会被打乱，也不是同步的。HashMap存放元素是通过哈希算法将其中的元素散列的存放在各个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-17T09:03:44.655Z">
+<meta property="og:updated_time" content="2018-11-18T10:32:56.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java-ArrayList">
-<meta name="twitter:description" content="ArrayList解决运行时动态更改数组的问题，采用ArrayList类。下面声明一个保存Person对下岗的数组列表：123ArrayList&amp;lt;Person&amp;gt; person = new ArrayList&amp;lt;Person&amp;gt;();//Java SE 7ArrayList&amp;lt;Person&amp;gt; people = new ArrayList&amp;lt;&amp;gt;(); Array">
+<meta name="twitter:title" content="Java-HashMap">
+<meta name="twitter:description" content="HashMapHashMap简介HashMap是基于哈希表的Map实现的的，一个Key对应一个Value，允许使用null键和null值,不保证映射的顺序，特别是它不保证该顺序恒久不变，即当哈希表中的条目数超出了加载因子与当前容量的乘积时的时候，哈希表进行rehash操作（即重建内部数据结构），此时映射顺序可能会被打乱，也不是同步的。HashMap存放元素是通过哈希算法将其中的元素散列的存放在各个">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/17/Java-集合之ArrayList/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/18/Java-HashMap/"/>
 
 
 
 
 
-  <title>Java-ArrayList | 小师弟的私房</title>
+  <title>Java-HashMap | 小师弟的私房</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Java-集合之ArrayList/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/18/Java-HashMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java-ArrayList</h1>
+          <h1 class="post-title" itemprop="name headline">Java-HashMap</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-17T17:03:03+08:00">
-                2018-11-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-18T17:50:45+08:00">
+                2018-11-18
               </time>
             
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  520字
+                  624字
                 </span>
               
 
@@ -398,30 +398,33 @@
       
 
       
-        <h1 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h1><p>解决运行时动态更改数组的问题，采用ArrayList类。下面声明一个保存Person对下岗的数组列表：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Person&gt; person = <span class="keyword">new</span> ArrayList&lt;Person&gt;();</span><br><span class="line"><span class="comment">//Java SE 7</span></span><br><span class="line">ArrayList&lt;Person&gt; people = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure></p>
-<h2 id="ArrayList简介"><a href="#ArrayList简介" class="headerlink" title="ArrayList简介"></a>ArrayList简介</h2><ul>
-<li>ArrayList基于数组实现，是一个动态的数组队列。但是它和Java中的数组又不一样，它的容量可以自动增长，类似于C语言中动态申请内存，动态增长内存。</li>
-<li>ArrayList继承了AbstractList，实现了RandomAccess、Cloneable和Serializable接口。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+        <h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><h2 id="HashMap简介"><a href="#HashMap简介" class="headerlink" title="HashMap简介"></a>HashMap简介</h2><p>HashMap是基于哈希表的Map实现的的，一个Key对应一个Value，允许使用null键和null值,不保证映射的顺序，特别是它不保证该顺序恒久不变，即当哈希表中的条目数超出了加载因子与当前容量的乘积时的时候，哈希表进行rehash操作（即重建内部数据结构），此时映射顺序可能会被打乱，也不是同步的。<br>HashMap存放元素是通过哈希算法将其中的元素散列的存放在各个“桶”之间。</p>
 <ul>
-<li>集成了AbstractList，AbstractList又继承了AbstractCollection实现了List接口，它是一个数组队列，提供了相关的添加、删除、修改、遍历等功能！</li>
-<li>实现了RandomAccess接口，提供了随机访问功能，实际上就是通过下标序号进行快速访问。</li>
-<li>实现了Cloneable接口，即覆盖了函数clone()，能被克隆。</li>
-<li>实现了Serializable接口，支持序列化，也就意味了ArrayList能够通过序列化传输。</li>
+<li>继承AbstractMap 抽象类， AbstractMap实现了Map接口中的一些方法，减少了重复代码；</li>
+<li>实现了Map、Cloneable、java.io.Serializable接口。 </li>
 </ul>
-<h2 id="ArrayList常用方法"><a href="#ArrayList常用方法" class="headerlink" title="ArrayList常用方法"></a>ArrayList常用方法</h2><ul>
-<li><code>ArrayList&lt;E&gt;()</code>，构造一个空数组列表；</li>
-<li><code>ArrayList&lt;E&gt;(int initialCapacity)</code>，用指定容量构造一个空数组列表；</li>
-<li><code>boolean add(E obj)</code>，在数组列表的尾端添加一个元素，永远返回true；</li>
-<li><code>int size()</code>，返回存储在数组列表中当前元素数量；</li>
-<li><code>ensureCapacity(int capacity)</code>，确保数组列表在不重新分配存储空间的情况下就能够保存给定数量的元素；</li>
-<li><code>void trimToSize()</code>，将数组列表的存储容量削减至当前大小；</li>
-<li><code>void set(int index, E obj)</code>，设置数组列表指定位置的元素值；</li>
-<li><code>E get(int index)</code>，获得指定位置的元素值；</li>
-<li><code>void add(int index, E obj)</code>，指定位置插入元素，元素后移；</li>
-<li><code>E remove(int index)</code>，删除指定位置元素，元素前移；<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListEx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; v = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            v.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(v.get(<span class="number">3</span>));	<span class="comment">// 3</span></span><br><span class="line">        v.set(<span class="number">3</span>, <span class="number">1994</span>);</span><br><span class="line">        System.out.println(v.get(<span class="number">3</span>));	<span class="comment">// 1994</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="HashMap常用方法"><a href="#HashMap常用方法" class="headerlink" title="HashMap常用方法"></a>HashMap常用方法</h2><p>构造方法：</p>
+<ul>
+<li><code>HashMap()</code>，构造一个具有默认初始容量(16)和默认加载因子(0.75)的空HashMap；</li>
+<li><code>HashMap(int initialCapacity)</code>，构造一个带指定初始容量和默认加载因子(0.75)的空HashMap；</li>
+<li><code>HashMap(int initialCapacity, float loadFactor)</code>，造一个带指定初始容量和加载因子的空HashMap；</li>
+<li><code>HashMap(Map&lt;? extends K,? extends V&gt; m)</code>，构造一个映射关系与指定Map相同的新 HashMap。</li>
+</ul>
+<p>其他方法：</p>
+<ul>
+<li><code>void clear()</code>，从此映射中移除所有映射关系；</li>
+<li><code>Object clone()</code>，返回此HashMap实例的浅表副本：并不复制键和值本身；</li>
+<li><code>boolean containsKey(Object key)</code>，如果此映射包含对于指定键的映射关系，则返回true ；</li>
+<li><code>boolean containsValue(Object value)</code>，如果此映射将一个或多个键映射到指定值，则返回true；</li>
+<li><code>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>，返回此映射所包含的映射关系的Set视图；</li>
+<li><code>V get(Object key)</code>，返回指定键所映射的值；如果对于该键来说，此映射不包含任何映射关系，则返回null； </li>
+<li><code>boolean isEmpty()</code>，如果此映射不包含键-值映射关系，则返回true； </li>
+<li><code>Set&lt;K&gt; keySet()</code>，返回此映射中所包含的键的Set视图； </li>
+<li><code>V put(K key, V value)</code>，在此映射中关联指定值与指定键。 </li>
+<li><code>void putAll(Map&lt;? extends K,? extends V&gt; m)</code>，将指定映射的所有映射关系复制到此映射中，这些映射关系将替换此映射目前针对指定映射中所有键的所有映射关系。 </li>
+<li><code>V remove(Object key)</code>，从此映射中移除指定键的映射关系（如果存在）； </li>
+<li><code>int size()</code>，返回此映射中的键-值映射关系数； </li>
+<li><code>Collection&lt;V&gt; values()</code>，返回此映射所包含的值的Collection视图。</li>
 </ul>
 
       
@@ -444,7 +447,7 @@
           
             <a href="/tags/集合/" rel="tag"># 集合</a>
           
-            <a href="/tags/ArrayList/" rel="tag"># ArrayList</a>
+            <a href="/tags/HashMap/" rel="tag"># HashMap</a>
           
         </div>
       
@@ -457,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/17/Java-集合概述/" rel="next" title="Java-集合概述">
-                <i class="fa fa-chevron-left"></i> Java-集合概述
+              <a href="/2018/11/18/Java-Map/" rel="next" title="Java-Map">
+                <i class="fa fa-chevron-left"></i> Java-Map
               </a>
             
           </div>
@@ -467,8 +470,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/17/Java-集合之LinkedList/" rel="prev" title="Java-集合之LinkedList">
-                Java-集合之LinkedList <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/18/Java-TreeMap/" rel="prev" title="Java-TreeMap">
+                Java-TreeMap <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -572,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -651,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList简介"><span class="nav-number">1.1.</span> <span class="nav-text">ArrayList简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">ArrayList常用方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap"><span class="nav-number">1.</span> <span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap简介"><span class="nav-number">1.1.</span> <span class="nav-text">HashMap简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">HashMap常用方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -685,7 +688,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">22.6k</span>
+    <span title="Site words total count">24.5k</span>
   
 </div>
 
@@ -704,7 +707,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共22.6k字</span>
+  <span class="post-count">博客全站共24.5k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
