@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++11,nullptr," />
+  <meta name="keywords" content="Java,多线程,线程池," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="nullptr引入nullptr的原因要从NULL说起。C和C++中的NULL不等价，NULL表示指针不指向任何对象，问题在于NULL不是关键字而只是一个宏定义。在C中，习惯将NULL定义为void*指针值0:1#define NULL ((void*)0) 但同时，也允许将NULL定义为整常数0。在C++中，NULL却被明确定义为整常数0:1234567#ifndef NULL#ifdef __">
-<meta name="keywords" content="C++11,nullptr">
+<meta name="description" content="Java线程池使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。JDK1.5之后有一个并">
+<meta name="keywords" content="Java,多线程,线程池">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nullptr">
-<meta property="og:url" content="http://yoursite.com/2018/10/29/nullptr/index.html">
+<meta property="og:title" content="Java-线程池">
+<meta property="og:url" content="http://yoursite.com/2018/11/27/Java-线程池/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="nullptr引入nullptr的原因要从NULL说起。C和C++中的NULL不等价，NULL表示指针不指向任何对象，问题在于NULL不是关键字而只是一个宏定义。在C中，习惯将NULL定义为void*指针值0:1#define NULL ((void*)0) 但同时，也允许将NULL定义为整常数0。在C++中，NULL却被明确定义为整常数0:1234567#ifndef NULL#ifdef __">
+<meta property="og:description" content="Java线程池使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。JDK1.5之后有一个并">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-30T02:39:09.213Z">
+<meta property="og:updated_time" content="2018-11-27T10:38:56.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nullptr">
-<meta name="twitter:description" content="nullptr引入nullptr的原因要从NULL说起。C和C++中的NULL不等价，NULL表示指针不指向任何对象，问题在于NULL不是关键字而只是一个宏定义。在C中，习惯将NULL定义为void*指针值0:1#define NULL ((void*)0) 但同时，也允许将NULL定义为整常数0。在C++中，NULL却被明确定义为整常数0:1234567#ifndef NULL#ifdef __">
+<meta name="twitter:title" content="Java-线程池">
+<meta name="twitter:description" content="Java线程池使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。JDK1.5之后有一个并">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/29/nullptr/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/27/Java-线程池/"/>
 
 
 
 
 
-  <title>nullptr | 小师弟的私房</title>
+  <title>Java-线程池 | 小师弟的私房</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/29/nullptr/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/Java-线程池/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">nullptr</h1>
+          <h1 class="post-title" itemprop="name headline">Java-线程池</h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T19:34:27+08:00">
-                2018-10-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T17:47:51+08:00">
+                2018-11-27
               </time>
             
 
@@ -325,8 +325,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  276字
+                  675字
                 </span>
               
 
@@ -377,7 +377,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1分钟
+                  2分钟
                 </span>
               
             </div>
@@ -398,11 +398,28 @@
       
 
       
-        <h1 id="nullptr"><a href="#nullptr" class="headerlink" title="nullptr"></a>nullptr</h1><p>引入nullptr的原因要从NULL说起。C和C++中的NULL不等价，NULL表示指针不指向任何对象，问题在于NULL不是关键字而只是一个宏定义。<br>在C中，习惯将NULL定义为void*指针值0:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL ((void*)0)</span></span><br></pre></td></tr></table></figure></p>
-<p>但同时，也允许将NULL定义为整常数0。<br>在C++中，NULL却被明确定义为整常数0:<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> NULL</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NULL ((void*)0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
-<p>在过去，如果要表示一个指针为空，条件反射会这么写：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * p = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></p>
-<p>但是会出现下面代码中出现的问题：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">voud <span class="title">func</span><span class="params">(<span class="keyword">int</span> * num)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"this is the ptr function."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"this is the normal function."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	func(<span class="literal">NULL</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>为了解决C++中NULL的二义性问题引进了nullptr，因为NULL实际上代表的是0。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; __LINE__ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> * p)</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; __LINE__ &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    func(<span class="literal">NULL</span>);</span><br><span class="line">    func(<span class="literal">nullptr</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="Java线程池"><a href="#Java线程池" class="headerlink" title="Java线程池"></a>Java线程池</h1><p>使用线程的时候就去创建一个线程，这样实现起来非常简便，但是就会有一个问题：如果并发的线程数量很多，并且每个线程都是执行一个时间很短的任务就结束了，这样频繁创建线程就会大大降低系统的效率，因为频繁创建线程和销毁线程需要时间。<br>那么有没有一种办法使得线程可以复用，就是执行完一个任务，并不被销毁，而是可以继续执行其他的任务？在Java中可以通过线程池来达到这样的效果。<br>JDK1.5之后有一个并发访问的<code>java.util.concurrent</code>包，对于线程池的操作的核心类和接口就定义在此包之中。其中有两个核心的接口：</p>
+<ul>
+<li>普通的执行线程池定义：<code>java.util.concurrent.ExecutorService</code></li>
+<li>调度线程池定义：<code>java.util.concurrent.ScheduledExecutorService</code><br>线程池的创建使用<code>java.util.concurrent.Executors</code>类完成：</li>
+<li><code>public static ExecutorService newCachedThreadPool()</code>，创建无大小限制的线程池；</li>
+<li><code>public static ExecutorService newFixedThreadPool(int nThreads)</code>，创建固定大小的线程池；</li>
+<li><code>public static ScheduledExecutorService newSingleThreadScheduledExecutor()</code>，创建单线程池；</li>
+<li><code>public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize)</code>，创建定时调度池，可以在定时周期内完成对线程的操作。<br>线程池的实现：</li>
+</ul>
+<ol>
+<li><p>无大小限制的线程池：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个线程池的模型，但是现在里面没有线程</span></span><br><span class="line">        ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            Thread.sleep(<span class="number">200</span>);</span><br><span class="line">            <span class="keyword">int</span> index = i;</span><br><span class="line">            executorService.submit(() -&gt; &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">" i = "</span> + index);</span><br><span class="line">            &#125;);     <span class="comment">// 执行线程操作</span></span><br><span class="line">        &#125;</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单线程池：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个线程池的模型，但是现在里面没有线程</span></span><br><span class="line">        ExecutorService executorService = Executors.newSingleThreadExecutor();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = i;</span><br><span class="line">            executorService.submit(() -&gt; &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">" i = "</span> + index);</span><br><span class="line">            &#125;);     <span class="comment">// 执行线程操作</span></span><br><span class="line">        &#125;</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>固定大小的线程池：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个线程池的模型，但是现在里面没有线程</span></span><br><span class="line">        ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = i;</span><br><span class="line">            executorService.submit(() -&gt; &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName() + <span class="string">" i = "</span> + index);</span><br><span class="line">            &#125;);     <span class="comment">// 执行线程操作</span></span><br><span class="line">        &#125;</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定时调度的线程池：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建一个具备有三个线程大小的定时调度线程池</span></span><br><span class="line">        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = i;</span><br><span class="line">            <span class="comment">// 执行线程操作</span></span><br><span class="line">            scheduledExecutorService.scheduleAtFixedRate(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    System.out.println(Thread.currentThread().getName() + <span class="string">" i = "</span> + index);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="number">3</span>, <span class="number">2</span>, TimeUnit.SECONDS);</span><br><span class="line">            <span class="comment">// 3：3秒后开始</span></span><br><span class="line">            <span class="comment">// 2：每两秒执行一次</span></span><br><span class="line">            <span class="comment">// TimeUnit.SECONDS：使用秒的单位</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -420,9 +437,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C-11/" rel="tag"># C++11</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            <a href="/tags/nullptr/" rel="tag"># nullptr</a>
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+          
+            <a href="/tags/线程池/" rel="tag"># 线程池</a>
           
         </div>
       
@@ -435,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/28/C-异常处理/" rel="next" title="C++异常处理">
-                <i class="fa fa-chevron-left"></i> C++异常处理
+              <a href="/2018/11/26/Java-多线程/" rel="next" title="Java-多线程">
+                <i class="fa fa-chevron-left"></i> Java-多线程
               </a>
             
           </div>
@@ -444,10 +463,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/30/原生字符串字面值/" rel="prev" title="原生字符串字面值">
-                原生字符串字面值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -629,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nullptr"><span class="nav-number">1.</span> <span class="nav-text">nullptr</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java线程池"><span class="nav-number">1.</span> <span class="nav-text">Java线程池</span></a></li></ol></div>
             
 
           </div>
