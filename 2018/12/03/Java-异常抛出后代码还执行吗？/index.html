@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/** * Created by IA">
+<meta name="description" content="Java-异常抛出后代码还执行吗？写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/*">
 <meta name="keywords" content="Java,异常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java-异常抛出后代码还执行吗？">
 <meta property="og:url" content="http://yoursite.com/2018/12/03/Java-异常抛出后代码还执行吗？/index.html">
 <meta property="og:site_name" content="小师弟的私房">
-<meta property="og:description" content="写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/** * Created by IA">
+<meta property="og:description" content="Java-异常抛出后代码还执行吗？写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/*">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/12/03/Java-异常抛出后代码还执行吗？/运行结果-001.jpg">
-<meta property="og:updated_time" content="2018-12-03T09:38:25.249Z">
+<meta property="og:updated_time" content="2018-12-03T09:41:11.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java-异常抛出后代码还执行吗？">
-<meta name="twitter:description" content="写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/** * Created by IA">
+<meta name="twitter:description" content="Java-异常抛出后代码还执行吗？写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：123456789101112131415161718192021222324252627282930313233343536373839404142package com.iajaop.exception;/*">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/03/Java-异常抛出后代码还执行吗？/运行结果-001.jpg">
 
 
@@ -363,7 +363,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  350字
+                  362字
                 </span>
               
 
@@ -400,7 +400,7 @@
       
 
       
-        <p>写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.iajaop.exception;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by IAJAOP on 2018/12/3</span></span><br><span class="line"><span class="comment"> * 测试java异常抛出后代码执行范围</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo_1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * public static void test_01() throws Exception&#123;</span></span><br><span class="line"><span class="comment">     *         throw new Exception("test_01抛出异常！");</span></span><br><span class="line"><span class="comment">     *         System.out.println("test_01继续执行！");</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     * 无法编译</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_02</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"test_02抛出异常！"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"test_02继续执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_03</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"test_03抛出异常！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"test_03继续执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//test_01();</span></span><br><span class="line">        test_02();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            test_03();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="Java-异常抛出后代码还执行吗？"><a href="#Java-异常抛出后代码还执行吗？" class="headerlink" title="Java-异常抛出后代码还执行吗？"></a>Java-异常抛出后代码还执行吗？</h1><p>写一个链表结构，关于越界方面想用异常来解决，就想到异常抛出后代码的执行范围是在哪里？异常抛出后，之后的代码还执行吗？根据网上搜查的资料写了如下代码来测试：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.iajaop.exception;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by IAJAOP on 2018/12/3</span></span><br><span class="line"><span class="comment"> * 测试java异常抛出后代码执行范围</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo_1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * public static void test_01() throws Exception&#123;</span></span><br><span class="line"><span class="comment">     *         throw new Exception("test_01抛出异常！");</span></span><br><span class="line"><span class="comment">     *         System.out.println("test_01继续执行！");</span></span><br><span class="line"><span class="comment">     *     &#125;</span></span><br><span class="line"><span class="comment">     * 无法编译</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_02</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"test_02抛出异常！"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"test_02继续执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test_03</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"test_03抛出异常！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"test_03继续执行！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//test_01();</span></span><br><span class="line">        test_02();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            test_03();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>运行结果如下：<br><img src="运行结果-001.jpg" alt=""><br>总结：</p>
 <ul>
 <li>若一段代码前有异常抛出，并且这个异常没有被捕获，这段代码将产生编译时错误【无法访问的语句】，如<code>test_01()</code>；</li>
@@ -499,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,6 +619,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-异常抛出后代码还执行吗？"><span class="nav-number">1.</span> <span class="nav-text">Java-异常抛出后代码还执行吗？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
