@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-24T08:38:43.671Z">
+<meta property="og:updated_time" content="2019-07-24T11:53:44.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（一）">
 <meta name="twitter:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.1k字
+                  3.2k字
                 </span>
               
 
@@ -1239,6 +1239,32 @@
 <p>eg：查找文件file.txt中存在字符串”string”的行,忽略大小写，并输出行号：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -in “string” file.txt</span><br></pre></td></tr></table></figure></p>
 <p>eg：查找当前目录及其子目录所有文件中存在字符串”string”的行,忽略大小写，并输出行号：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rni “string” *</span><br></pre></td></tr></table></figure></p>
 <p>eg：查找当前目录及其子目录所有文件中存在字符串”string1”的行,忽略大小写，并输出行号，但是不存在“string2”的行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rni “string” * | grep -v “string2”</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">查询字符串参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">^string</td>
+<td style="text-align:center">行首，搜寻以string开头的行</td>
+</tr>
+<tr>
+<td style="text-align:center">string$</td>
+<td style="text-align:center">行尾，搜寻以string结尾的行</td>
+</tr>
+<tr>
+<td style="text-align:center">string*</td>
+<td style="text-align:center">搜寻以string开头的单词</td>
+</tr>
+<tr>
+<td style="text-align:center">^$</td>
+<td style="text-align:center">搜寻空行</td>
+</tr>
+</tbody>
+</table>
 <h3 id="find-amp-grep结合"><a href="#find-amp-grep结合" class="headerlink" title="find&amp;grep结合"></a>find&amp;grep结合</h3><p>eg：找出当前目录下以c为结尾的文件，同时找出其中包含strcpy的字段，但是不包含kahao字段的：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name “*c” |xargs grep -rni “strcpy” | grep -v  “kahao”</span><br></pre></td></tr></table></figure></p>
 <p>由于很多命令不支持<code>|</code>管道来传递参数，而日常工作中有有这个必要，所以就有了<code>xargs</code>命令。</p>
 <h2 id="系统相关命令"><a href="#系统相关命令" class="headerlink" title="系统相关命令"></a>系统相关命令</h2><table>
