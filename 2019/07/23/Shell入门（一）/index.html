@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-23T15:05:45.214Z">
+<meta property="og:updated_time" content="2019-07-24T01:14:26.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（一）">
 <meta name="twitter:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
@@ -965,9 +965,75 @@
 </tr>
 </tbody>
 </table>
-<h3 id="目录复制-amp-移动-amp-重命名-amp-删除"><a href="#目录复制-amp-移动-amp-重命名-amp-删除" class="headerlink" title="目录复制&amp;移动&amp;重命名&amp;删除"></a>目录复制&amp;移动&amp;重命名&amp;删除</h3><p>1.cp命令——复制文件或目录：<br>命令 | 作用<br>:-:|:-:<br>cp file1 file2 | 将file1的内容复制到file2<br>cp file1 file2 .. dir1 | 将file1,file2等文件复制到目录dir1中<br>cp -r dir1 dir2 | 将目录dir1复制到dir2，包括dir1下的子目录<br>cp -p file1 file2 | 保留原文件file1的属性,比如创建时间等等</p>
-<p>2.mv命令——目录进行重命名或移动：<br>命令 | 作用<br>:-:|:-:<br>mv file1 file2 | 若file2不存在，则将file1命名为file2，否则file1覆盖file2<br>mv dir1 dir2 | 若dir2不存在，则将dir1命名为dir2，否则将dir1的内容移动到dir2目录下作为子目录</p>
-<p>3.rm命令——删除文件或目录<br>命令 | 作用<br>:-:|:-:<br>rm file1 | 删除文件file1<br>rm -r dir1 | 删除dir1及其子目录<br>rm -rf dir1 | 强制删除dir1及其子目录</p>
+<h3 id="目录复制-amp-移动-amp-重命名-amp-删除"><a href="#目录复制-amp-移动-amp-重命名-amp-删除" class="headerlink" title="目录复制&amp;移动&amp;重命名&amp;删除"></a>目录复制&amp;移动&amp;重命名&amp;删除</h3><p>1.cp命令——复制文件或目录：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cp file1 file2</td>
+<td style="text-align:center">将file1的内容复制到file2</td>
+</tr>
+<tr>
+<td style="text-align:center">cp file1 file2 .. dir1</td>
+<td style="text-align:center">将file1,file2等文件复制到目录dir1中</td>
+</tr>
+<tr>
+<td style="text-align:center">cp -r dir1 dir2</td>
+<td style="text-align:center">将目录dir1复制到dir2，包括dir1下的子目录</td>
+</tr>
+<tr>
+<td style="text-align:center">cp -p file1 file2</td>
+<td style="text-align:center">保留原文件file1的属性,比如创建时间等等</td>
+</tr>
+</tbody>
+</table>
+<p>2.mv命令——目录进行重命名或移动：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">mv file1 file2</td>
+<td style="text-align:center">若file2不存在，则将file1命名为file2，否则file1覆盖file2</td>
+</tr>
+<tr>
+<td style="text-align:center">mv dir1 dir2</td>
+<td style="text-align:center">若dir2不存在，则将dir1命名为dir2，否则将dir1的内容移动到dir2目录下作为子目录</td>
+</tr>
+</tbody>
+</table>
+<p>3.rm命令——删除文件或目录：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">rm file1</td>
+<td style="text-align:center">删除文件file1</td>
+</tr>
+<tr>
+<td style="text-align:center">rm -r dir1</td>
+<td style="text-align:center">删除dir1及其子目录</td>
+</tr>
+<tr>
+<td style="text-align:center">rm -rf dir1</td>
+<td style="text-align:center">强制删除dir1及其子目录</td>
+</tr>
+</tbody>
+</table>
 <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="新建-amp-查看"><a href="#新建-amp-查看" class="headerlink" title="新建&amp;查看"></a>新建&amp;查看</h3><table>
 <thead>
 <tr>
