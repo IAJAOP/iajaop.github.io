@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-24T01:14:26.410Z">
+<meta property="og:updated_time" content="2019-07-24T01:17:27.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（一）">
 <meta name="twitter:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
@@ -1120,7 +1120,57 @@
 <p>eg：将dir1目录下所有的文件打成tar包：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf dir1.tar dir1</span><br></pre></td></tr></table></figure></p>
 <p>eg：对dir1.tar进行gz压缩：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gzip  dir1.tar</span><br></pre></td></tr></table></figure></p>
 <p>eg：解压缩过程：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gunzip dir1.tar.gz</span><br></pre></td></tr></table></figure></p>
-<h3 id="find搜索文件"><a href="#find搜索文件" class="headerlink" title="find搜索文件"></a>find搜索文件</h3><p>find是一个非常非常实用的命令，主要功能：查找符合条件的目录或者文件。常用参数如下：<br>参数 | 作用<br>:-:|:-:<br>-name “string” | 找出包含string的名字<br>-type d/f | d：找出目录，f：普通的文件<br>-mtime -5 | 找出修改时间在5天以内的<br>-mtime +5 | 找出修改时间在5天以前的<br>-size +100c | size大于100个字节的<br>-user yechao | 找出用户为yechao的内容<br>-perm 777 | 找出文件权限为777的文件<br>-o |用“或”来匹配多个条件<code>find . \( -name “*.txt” -o  -name “*.bat” \)</code><br>-maxdetph 1 | 找出子目录的最大深度为1<br>-mindepth 2 | 找出子目录的最小深度是2</p>
+<h3 id="find搜索文件"><a href="#find搜索文件" class="headerlink" title="find搜索文件"></a>find搜索文件</h3><p>find是一个非常非常实用的命令，主要功能：查找符合条件的目录或者文件。常用参数如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-name “string”</td>
+<td style="text-align:center">找出包含string的名字</td>
+</tr>
+<tr>
+<td style="text-align:center">-type d/f</td>
+<td style="text-align:center">d：找出目录，f：普通的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-mtime -5</td>
+<td style="text-align:center">找出修改时间在5天以内的</td>
+</tr>
+<tr>
+<td style="text-align:center">-mtime +5</td>
+<td style="text-align:center">找出修改时间在5天以前的</td>
+</tr>
+<tr>
+<td style="text-align:center">-size +100c</td>
+<td style="text-align:center">size大于100个字节的</td>
+</tr>
+<tr>
+<td style="text-align:center">-user yechao</td>
+<td style="text-align:center">找出用户为yechao的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-perm 777</td>
+<td style="text-align:center">找出文件权限为777的文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-o</td>
+<td style="text-align:center">用“或”来匹配多个条件<code>find . \( -name “*.txt” -o  -name “*.bat” \)</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-maxdetph 1</td>
+<td style="text-align:center">找出子目录的最大深度为1</td>
+</tr>
+<tr>
+<td style="text-align:center">-mindepth 2</td>
+<td style="text-align:center">找出子目录的最小深度是2</td>
+</tr>
+</tbody>
+</table>
 <p>eg：找出不包含<code>.txt</code>的文件：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . ! -name "*.txt"</span><br></pre></td></tr></table></figure></p>
 <p>eg：找出包含<code>txt</code>的文件并执行备份成<code>.bak</code>文件，必须以<code>\;</code>结尾：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name “*txt” -exec mv &#123;&#125; &#123;&#125;.bak \;</span><br></pre></td></tr></table></figure></p>
 <h3 id="grep搜索文件内容"><a href="#grep搜索文件内容" class="headerlink" title="grep搜索文件内容"></a>grep搜索文件内容</h3><table>
@@ -1137,7 +1187,46 @@
 </tr>
 </tbody>
 </table>
-<p>常用参数：<br>参数 | 作用<br>:-:|:-:<br>-r | 递归查询当前文件以及子目录文件<br>-n | 匹配字符串所在的文件的行，并输出行号<br>-i | 查询字符串,忽略大小写<br>-w | 匹配某个单词<br>-v | 对匹配的结果进行反转(排除这个字符串的部分)<br>-e | 可以有多个或的关系例如：<code>grep -e “aaa” -e “bbb” file.txt</code><br>-E | 或的关系，<code>grep -E &#39;string1|string2&#39; file.txt</code>   string1和string2是或的关系</p>
+<p>常用参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">递归查询当前文件以及子目录文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:center">匹配字符串所在的文件的行，并输出行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">查询字符串,忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">-w</td>
+<td style="text-align:center">匹配某个单词</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">对匹配的结果进行反转(排除这个字符串的部分)</td>
+</tr>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">可以有多个或的关系例如：<code>grep -e “aaa” -e “bbb” file.txt</code></td>
+</tr>
+<tr>
+<td style="text-align:center">-E</td>
+<td style="text-align:center">或的关系，`grep -E ‘string1</td>
+<td>string2’ file.txt`   string1和string2是或的关系</td>
+</tr>
+</tbody>
+</table>
 <p>eg：查找文件file.txt中存在字符串”string”的行,忽略大小写，并输出行号：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -in “string” file.txt</span><br></pre></td></tr></table></figure></p>
 <p>eg：查找当前目录及其子目录所有文件中存在字符串”string”的行,忽略大小写，并输出行号：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rni “string” *</span><br></pre></td></tr></table></figure></p>
 <p>eg：查找当前目录及其子目录所有文件中存在字符串”string1”的行,忽略大小写，并输出行号，但是不存在“string2”的行：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rni “string” * | grep -v “string2”</span><br></pre></td></tr></table></figure></p>
