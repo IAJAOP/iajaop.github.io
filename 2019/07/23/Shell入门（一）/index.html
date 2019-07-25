@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-24T11:53:44.281Z">
+<meta property="og:updated_time" content="2019-07-25T07:44:38.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（一）">
 <meta name="twitter:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.2k字
+                  3.3k字
                 </span>
               
 
@@ -1317,6 +1317,18 @@
 </table>
 <p>eg：以M为单位显示：<code>df -M</code><br>eg：以好看的方式展示：<code>df -h</code><br>eg：对目录下所有的文件求和：<code>du -s</code><br>eg：以1024字节为列出磁盘的空间使用情况：<code>du -k</code><br>eg：显示当前所有目录及文件大小（不显示隐藏文件）：<code>du * -sh</code>  </p>
 <h3 id="定时任务crontab"><a href="#定时任务crontab" class="headerlink" title="定时任务crontab"></a>定时任务crontab</h3><p>ubuntu使用<code>apt-get install cron</code>安装，安装完后使用<code>service cron start</code>启动服务。</p>
+<ol>
+<li><p>写一个hello脚本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">echo $$</span><br><span class="line">n=0</span><br><span class="line">while [ $n -le 50 ]</span><br><span class="line">do</span><br><span class="line">    n=`expr $n + 1`</span><br><span class="line">    printf "the %s line, %s\n" "$n" "hello, world"</span><br><span class="line">    sleep 1</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询是否启动crontab</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep cron|grep -v grep</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入crontab编辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20-30 15,16 * * * /Users/iajaop/linux培训/hello.sh &gt;&gt; /Users/iajaop/linux培训/hello.txt</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>定时任务crontab有五个字段，对应的是分、时、日、月、年，Shell路径必须时绝对路径。</p>
 
       
     </div>
@@ -1583,7 +1595,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">34.5k</span>
+    <span title="Site words total count">34.6k</span>
   
 </div>
 
@@ -1602,7 +1614,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.5k字</span>
+  <span class="post-count">博客全站共34.6k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
