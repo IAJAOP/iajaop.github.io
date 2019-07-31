@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="单行函数,字符函数,数值函数,日期函数,转换函数,通用函数," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="单行函数语法：1funcation_name(列 | 表达式 [,参数1,参数2]) 单行函数主要分为以下的几种：  字符函数：接收数据返回具体的字符信息； 数值函数：对数字进行处理，例如：四舍五入； 日期函数：直接对日期进行相关的操作； 转换函数：日期、字符、数字之间可以完成互相转换功能； 通用函数：Oracle自己提供的有特色的函数。  字符函数   函数名称 描述     UPPER( 列">
+<meta name="keywords" content="单行函数,字符函数,数值函数,日期函数,转换函数,通用函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle之单行函数">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/Oracle之单行函数/index.html">
+<meta property="og:site_name" content="小师弟的私房">
+<meta property="og:description" content="单行函数语法：1funcation_name(列 | 表达式 [,参数1,参数2]) 单行函数主要分为以下的几种：  字符函数：接收数据返回具体的字符信息； 数值函数：对数字进行处理，例如：四舍五入； 日期函数：直接对日期进行相关的操作； 转换函数：日期、字符、数字之间可以完成互相转换功能； 通用函数：Oracle自己提供的有特色的函数。  字符函数   函数名称 描述     UPPER( 列">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-31T06:46:45.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle之单行函数">
+<meta name="twitter:description" content="单行函数语法：1funcation_name(列 | 表达式 [,参数1,参数2]) 单行函数主要分为以下的几种：  字符函数：接收数据返回具体的字符信息； 数值函数：对数字进行处理，例如：四舍五入； 日期函数：直接对日期进行相关的操作； 转换函数：日期、字符、数字之间可以完成互相转换功能； 通用函数：Oracle自己提供的有特色的函数。  字符函数   函数名称 描述     UPPER( 列">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/Oracle之单行函数/"/>
+
+
+
+
+
+  <title>Oracle之单行函数 | 小师弟的私房</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aaa9f8007464a3da4bd067ec40eb35b4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小师弟的私房</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/Oracle之单行函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IAJAOP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小师弟的私房">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oracle之单行函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-31T14:44:23+08:00">
+                2019-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.2k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  8分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h1><p>语法：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">funcation_name(列 | 表达式 [,参数1,参数2])</span><br></pre></td></tr></table></figure></p>
+<p>单行函数主要分为以下的几种：</p>
+<ul>
+<li>字符函数：接收数据返回具体的字符信息；</li>
+<li>数值函数：对数字进行处理，例如：四舍五入；</li>
+<li>日期函数：直接对日期进行相关的操作；</li>
+<li>转换函数：日期、字符、数字之间可以完成互相转换功能；</li>
+<li>通用函数：Oracle自己提供的有特色的函数。</li>
+</ul>
+<h1 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UPPER( 列 或 字符串)</td>
+<td style="text-align:center">将字符串的内容全部转大写</td>
+</tr>
+<tr>
+<td style="text-align:center">LOWER( 列 或 字符串)</td>
+<td style="text-align:center">将字符串的内容全部转小写</td>
+</tr>
+<tr>
+<td style="text-align:center">INITCAP( 列 或 字符串)</td>
+<td style="text-align:center">将字符串的开头首字母大写</td>
+</tr>
+<tr>
+<td style="text-align:center">REPLACE(列 或 字符串, 新的字符串)</td>
+<td style="text-align:center">使用新的字符串替换旧的字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">LENGTH(列 或 字符串)</td>
+<td style="text-align:center">求出字符串长度</td>
+</tr>
+<tr>
+<td style="text-align:center">SUBSTR(列 或 字符串, 开始点 [,长度])</td>
+<td style="text-align:center">字符串截取</td>
+</tr>
+<tr>
+<td style="text-align:center">ASCII(字符)</td>
+<td style="text-align:center">返回与指定字符对应的十进制数字</td>
+</tr>
+<tr>
+<td style="text-align:center">CHR(数字)</td>
+<td style="text-align:center">给出一个整数，并返回与之对应的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">RPAD(列 或 字符串, 长度, 填充字符)</td>
+<td style="text-align:center">在右填充指定长度字符</td>
+</tr>
+<tr>
+<td style="text-align:center">LPAD(列 或 字符串, 长度, 填充字符)</td>
+<td style="text-align:center">在左填充指定长度字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">LTRIM(字符串)、RTRIM(字符串)</td>
+<td style="text-align:center">去掉左或右空格</td>
+</tr>
+<tr>
+<td style="text-align:center">TRIM(列 或 字符串)</td>
+<td style="text-align:center">去掉左右空格</td>
+</tr>
+<tr>
+<td style="text-align:center">INSTR(列 或 字符串, 要查找的字符串, 开始位置, 出现位置)</td>
+<td style="text-align:center">查找一个子字符串是否在指定的位置上出现</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 大小写转换</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">UPPER</span>( <span class="string">'LiXingHua'</span> ),</span><br><span class="line">	<span class="keyword">LOWER</span>( <span class="string">'MLDN'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	<span class="keyword">name</span> = <span class="keyword">UPPER</span>( <span class="string">'smith'</span> );</span><br></pre></td></tr></table></figure>
+<h1 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ROUND(数字 [,保留位数])</td>
+<td style="text-align:center">对小数进行四舍五入，可以指定保留位数，如果不指定，则表示将小数点之后的数字全部进行四舍五入</td>
+</tr>
+<tr>
+<td style="text-align:center">TRUNC(数字 [,截取位数])</td>
+<td style="text-align:center">保留指定位数的小数，如果不指定，则表示不保留小数</td>
+</tr>
+<tr>
+<td style="text-align:center">MOD(数字, 数字)</td>
+<td style="text-align:center">取模</td>
+</tr>
+</tbody>
+</table>
+<p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">ROUND</span>( <span class="number">789.652</span> ),</span><br><span class="line">	<span class="keyword">ROUND</span>( <span class="number">789.652</span>, <span class="number">2</span> ),</span><br><span class="line">	<span class="keyword">ROUND</span>( <span class="number">789.652</span>, - <span class="number">1</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h1 id="日期操作"><a href="#日期操作" class="headerlink" title="日期操作"></a>日期操作</h1><h2 id="日期操作公式"><a href="#日期操作公式" class="headerlink" title="日期操作公式"></a>日期操作公式</h2><p>除了取得系统时间的操作之外，在Oracle中也有如下三个日期操作公式：</p>
+<ul>
+<li>日期 – 数字 = 日期</li>
+<li>日期 + 数字 = 日期</li>
+<li>日期 – 日期 = 数字（天数）<br>eg：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">SYSDATE</span> 当前日期,</span><br><span class="line">	ADD_MONTHS( <span class="keyword">SYSDATE</span>, <span class="number">3</span> ) 三个月后,</span><br><span class="line">	ADD_MONTHS( <span class="keyword">SYSDATE</span>, <span class="number">-3</span> ) 三个月前 </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ADD_MONTHS(日期,数字)</td>
+<td style="text-align:center">在指定的日期上加入指定的月数，求出新的日期</td>
+</tr>
+<tr>
+<td style="text-align:center">MONTHS_BETWEEN(日期1,日期2)</td>
+<td style="text-align:center">求出两个日期间的雇佣月数</td>
+</tr>
+<tr>
+<td style="text-align:center">NEXT_DAY(日期,星期数)</td>
+<td style="text-align:center">求出下一个的星期X的具体日期</td>
+</tr>
+<tr>
+<td style="text-align:center">LAST_DAY(日期)</td>
+<td style="text-align:center">求出指定日期的最后一天日期</td>
+</tr>
+<tr>
+<td style="text-align:center">EXTRACT(格式 FROM 数据)</td>
+<td style="text-align:center">日期时间分割，或计算给定两个日期的间隔</td>
+</tr>
+</tbody>
+</table>
+<p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># 下个星期一日期</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	NEXT_DAY( <span class="keyword">SYSDATE</span>, <span class="string">'星期一'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line">	</span><br><span class="line"># 查询雇佣年限、月数和天数</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	hiredate,</span><br><span class="line">	TRUNC( MONTHS_BETWEEN( <span class="keyword">SYSDATE</span>, HIREDATE ) / <span class="number">12</span> ) 已雇佣年数,</span><br><span class="line">	TRUNC( MONTHS_BETWEEN( <span class="keyword">SYSDATE</span>, hiredate )) 已雇佣月数,</span><br><span class="line">	TRUNC( <span class="keyword">SYSDATE</span> - hiredate ) 已雇佣天数 </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br><span class="line">	</span><br><span class="line"># 取出年份，月份及号数</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">YEAR</span> <span class="keyword">from</span> <span class="built_in">DATE</span> <span class="string">'2019-07-30'</span> ) <span class="keyword">years</span>,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">MONTH</span> <span class="keyword">from</span> <span class="built_in">DATE</span> <span class="string">'2019-07-30'</span> ) <span class="keyword">months</span>,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">day</span> <span class="keyword">from</span> <span class="keyword">SYSDATE</span> ) <span class="keyword">days</span> </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line"></span><br><span class="line"># 从时间戳之中取</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">year</span> <span class="keyword">from</span> SYSTIMESTAMP ) <span class="keyword">years</span>,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">month</span> <span class="keyword">from</span> SYSTIMESTAMP ) <span class="keyword">months</span>,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">day</span> <span class="keyword">from</span> SYSTIMESTAMP ) <span class="keyword">days</span>,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">hour</span> <span class="keyword">from</span> SYSTIMESTAMP ) hours,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">minute</span> <span class="keyword">from</span> SYSTIMESTAMP ) minutes,</span><br><span class="line">	<span class="keyword">EXTRACT</span>( <span class="keyword">second</span> <span class="keyword">from</span> SYSTIMESTAMP ) seconds </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h1 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">TO_CHAR(日期 或 数字 或 列, 转换格式)</td>
+<td style="text-align:center">将指定的数据按照指定的格式变为字符串型</td>
+</tr>
+<tr>
+<td style="text-align:center">TO_DATE(字符串 或 列,转换格式)</td>
+<td style="text-align:center">将指定字符串按照指定的格式变为DATE型</td>
+</tr>
+<tr>
+<td style="text-align:center">TO_NUMBER(字符串 或 列)</td>
+<td style="text-align:center">将指定的数据类型变为数字型</td>
+</tr>
+</tbody>
+</table>
+<h2 id="TO-CHAR"><a href="#TO-CHAR" class="headerlink" title="TO_CHAR"></a>TO_CHAR</h2><ul>
+<li>日期格式化标记：   </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">转换格式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">YYYY</td>
+<td style="text-align:center">完整的年份数字表示，年有四位，所以使用四个Y</td>
+</tr>
+<tr>
+<td style="text-align:center">Y,YYY</td>
+<td style="text-align:center">带逗号的年</td>
+</tr>
+<tr>
+<td style="text-align:center">YYY</td>
+<td style="text-align:center">年的后三位</td>
+</tr>
+<tr>
+<td style="text-align:center">YY</td>
+<td style="text-align:center">年的后两位</td>
+</tr>
+<tr>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">年的最后一位</td>
+</tr>
+<tr>
+<td style="text-align:center">YEAR</td>
+<td style="text-align:center">年份的文字表示，直接表示四位的年</td>
+</tr>
+<tr>
+<td style="text-align:center">MONTH</td>
+<td style="text-align:center">月份的文字表示，直接表示两位的月</td>
+</tr>
+<tr>
+<td style="text-align:center">MM</td>
+<td style="text-align:center">用两位数字来表示月份，月有两位，所以使用两个M</td>
+</tr>
+<tr>
+<td style="text-align:center">DAY</td>
+<td style="text-align:center">天数的文字表示</td>
+</tr>
+<tr>
+<td style="text-align:center">DDD</td>
+<td style="text-align:center">表示一年里的天数（001 ~ 366）</td>
+</tr>
+<tr>
+<td style="text-align:center">DD</td>
+<td style="text-align:center">表示一月里的天数（01 ~ 31）</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">表示一周里的天数（1 ~ 7）</td>
+</tr>
+<tr>
+<td style="text-align:center">DY</td>
+<td style="text-align:center">用文字表示星期几</td>
+</tr>
+<tr>
+<td style="text-align:center">WW</td>
+<td style="text-align:center">表示一年里的周数</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">表示一月里的周数</td>
+</tr>
+<tr>
+<td style="text-align:center">HH</td>
+<td style="text-align:center">表示12小时制，小时是两位数字，使用两个H</td>
+</tr>
+<tr>
+<td style="text-align:center">HH24</td>
+<td style="text-align:center">表示24小时制</td>
+</tr>
+<tr>
+<td style="text-align:center">MI</td>
+<td style="text-align:center">表示分钟</td>
+</tr>
+<tr>
+<td style="text-align:center">SS</td>
+<td style="text-align:center">表示秒，秒是两位数字，使用两个S</td>
+</tr>
+<tr>
+<td style="text-align:center">SSSSS</td>
+<td style="text-align:center">午夜之后的秒数字表示（0 ~ 86399）</td>
+</tr>
+<tr>
+<td style="text-align:center">AM 或 PM（A.M. 或 P.M.）</td>
+<td style="text-align:center">表示上午或下午</td>
+</tr>
+<tr>
+<td style="text-align:center">FM</td>
+<td style="text-align:center">去掉查询后的前导0，该标记用于时间模板的后缀</td>
+</tr>
+</tbody>
+</table>
+<p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line">	<span class="keyword">SYSDATE</span>,</span><br><span class="line">	TO_CHAR( <span class="keyword">SYSDATE</span>, <span class="string">'yyyy-mm-dd'</span> ),</span><br><span class="line">	TO_CHAR( <span class="keyword">SYSDATE</span>, <span class="string">'yyyy-mm-dd hh24:mi:ss'</span> ),</span><br><span class="line">	TO_CHAR( <span class="keyword">SYSDATE</span>, <span class="string">'YEAR-MONTH-DY'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line"></span><br><span class="line"># 2月份雇佣的员工</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	TO_CHAR( hiredate, <span class="string">'MM'</span> ) = <span class="string">'02'</span>;</span><br><span class="line">	</span><br><span class="line"># 2月份雇佣的员工</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	TO_CHAR( hiredate, <span class="string">'MM'</span> ) = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>数字格式化标记</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">转换格式</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">表示一位数字</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">显示前导0</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">将货币的符号显示为美元$符号</td>
+</tr>
+<tr>
+<td style="text-align:center">L</td>
+<td style="text-align:center">根据语言环境不同，自动选择货币符号</td>
+</tr>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">显示小数点</td>
+</tr>
+<tr>
+<td style="text-align:center">,</td>
+<td style="text-align:center">显示千位符</td>
+</tr>
+</tbody>
+</table>
+<p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	TO_CHAR( <span class="number">987654321.789</span>, <span class="string">'999,999,999,999.99999'</span> ),</span><br><span class="line">	TO_CHAR( <span class="number">987654321.789</span>, <span class="string">'000,999,999,999.99999'</span> ),</span><br><span class="line">	TO_CHAR( <span class="number">987654321.789</span>, <span class="string">'L999,999,999,999.99999'</span> ),</span><br><span class="line">	TO_CHAR( <span class="number">987654321.789</span>, <span class="string">'$999,999,999,999.99999'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h2 id="TO-DATE"><a href="#TO-DATE" class="headerlink" title="TO_DATE"></a>TO_DATE</h2><p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">TO_DATE</span>( <span class="string">'2018-02-25'</span>, <span class="string">'yyyy-mm-dd'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line"></span><br><span class="line"># TO_TIMESTAMP()函数	</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	TO_TIMESTAMP( <span class="string">'2018-02-25 18:09:11'</span>, <span class="string">'yyyy-mm-dd hh24:mi:ss'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h2 id="TO-NUMBER"><a href="#TO-NUMBER" class="headerlink" title="TO_NUMBER"></a>TO_NUMBER</h2><p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	TO_NUMBER( <span class="string">'09'</span> ) + TO_NUMBER( <span class="string">'21'</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br><span class="line"></span><br><span class="line"># 自动变为数字</span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="string">'09'</span> + <span class="string">'21'</span> </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h1 id="通用函数"><a href="#通用函数" class="headerlink" title="通用函数"></a>通用函数</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NVL(数字 或 列 , 默认值)</td>
+<td style="text-align:center">如果显示的数字是null的话，则使用默认数值表示</td>
+</tr>
+<tr>
+<td style="text-align:center">NVL2(数字 或 列 , 返回结果一（不为空显示） , 返回结果二（为空显示）)</td>
+<td style="text-align:center">判断指定的列是否是null，如果不为null则返回结果一，为空则返回结果二</td>
+</tr>
+<tr>
+<td style="text-align:center">NULLIF(表达式一，表达式二)</td>
+<td style="text-align:center">比较表达式一和表达式二的结果是否相等，如果相等返回NULL，如果不等返回表达式一</td>
+</tr>
+<tr>
+<td style="text-align:center">DECODE(列 或 值 , 判断值1,显示结果1, 判断值2,显示结果2,…, 默认值)</td>
+<td style="text-align:center">多值判断，如果某一个列（或某一个值）与判断值相同，则使用指定的显示结果输出，如果没有满足条件，则显示默认值</td>
+</tr>
+<tr>
+<td style="text-align:center">CASE 列 或 数值 WHEN 表达式1 THEN 显示结果1 … ELSE 表达式N …END</td>
+<td style="text-align:center">用于实现多条件判断，在WHEN之后编写条件，而在THEN之后编写条件满足的显示操作，如果都不满足则使用ELSE中的表达式处理</td>
+</tr>
+<tr>
+<td style="text-align:center">COALESCE(表达式1, 表达式2 , …表达式n)</td>
+<td style="text-align:center">将表达式逐个判断，如果表达式1的内容是null，则显示表达式2，如果表达式2的内容是null，则显示表达式3，依次类推，如果表达式n的结果还是null，则返回null</td>
+</tr>
+</tbody>
+</table>
+<h2 id="NVL"><a href="#NVL" class="headerlink" title="NVL"></a>NVL</h2><p><code>nvl(expr1, expr2)</code>，expr1为null显示0，expr1不为null显示expr1，eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	NVL( <span class="literal">null</span>, <span class="number">0</span> ),</span><br><span class="line">	NVL( <span class="number">3</span>, <span class="number">0</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h2 id="NVL2"><a href="#NVL2" class="headerlink" title="NVL2"></a>NVL2</h2><p><code>nvl2(expr1, expr2, expr3)</code>，expr1为null显示expr3，expr1不为null显示expr2，<br>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	NVL2( comm, sal + comm, sal ) * <span class="number">12</span>,</span><br><span class="line">	sal,</span><br><span class="line">	comm </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF"></a>NULLIF</h2><p><code>nullif(expr1, expr2)</code>，expr1与expr2相等返回null，否则返回expr1，eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">NULLIF</span>( <span class="number">1</span>, <span class="number">1</span> ),</span><br><span class="line">	<span class="keyword">NULLIF</span>( <span class="number">1</span>, <span class="number">2</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
+<h2 id="DECODE"><a href="#DECODE" class="headerlink" title="DECODE"></a>DECODE</h2><p>DECODE()函数类似于程序中的if…else if…else if…else，但是判断的内容都是一个具体的值，DECODE()函数的语法如下：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DECODE(列 | 表达式,值1,输出结果,值2,输出结果,... , 默认值) ;</span><br></pre></td></tr></table></figure></p>
+<p>eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">name</span> 姓名,</span><br><span class="line">	NVL(</span><br><span class="line">		<span class="keyword">DECODE</span>( job, </span><br><span class="line">		<span class="string">'CLERK'</span>, <span class="string">'业务员'</span>, </span><br><span class="line">		<span class="string">'SALEMAN'</span>, <span class="string">'销售员'</span>, </span><br><span class="line">		<span class="string">'MANAGER'</span>, <span class="string">'经理'</span>, </span><br><span class="line">		<span class="string">'ANALYST'</span>, <span class="string">'分析员'</span>, </span><br><span class="line">		<span class="string">'PRESIDENT'</span>, <span class="string">'总裁'</span> ),</span><br><span class="line">		<span class="string">'无职业'</span> ) 职业</span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="CASE"><a href="#CASE" class="headerlink" title="CASE"></a>CASE</h2><p>功能与DECODE()函数有些类似，都是执行多条件判断。不过严格来讲CASE表达式本身并不属于一种函数的范畴，它的主要功能是针对于给定的列或者是字段进行依次判断，在WHEN中编写判断语句，而在THEN中编写处理语句，最后如果都不满足则使用ELSE进行处理，eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">name</span> 姓名,</span><br><span class="line">	sal 当前工资,</span><br><span class="line"><span class="keyword">case</span></span><br><span class="line">		job </span><br><span class="line">		<span class="keyword">when</span> <span class="string">'CLERK'</span> <span class="keyword">then</span></span><br><span class="line">		sal * <span class="number">1.1</span> </span><br><span class="line">		<span class="keyword">when</span> <span class="string">'SALEMAN'</span> <span class="keyword">then</span></span><br><span class="line">		sal * <span class="number">1.2</span> </span><br><span class="line">		<span class="keyword">when</span> <span class="string">'MANAGER'</span> <span class="keyword">then</span></span><br><span class="line">		sal * <span class="number">1.3</span> </span><br><span class="line">		<span class="keyword">else</span> sal * <span class="number">1.5</span> </span><br><span class="line">	<span class="keyword">end</span> 加薪后 </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br></pre></td></tr></table></figure></p>
+<h2 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h2><p>COALESCE(表达式1, 表达式2, 表达式3, …表达式n)函数的主要功能是对null进行操作，采用依次判断表达式的方式完成，如果表达式1为null，则显示表达式2的内容，如果表达式2的内容为空，则显示表达式3的内容，依次类推，判断到最后如果还是null，则最终的显示结果就是null，eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">	<span class="keyword">name</span>,</span><br><span class="line">	sal,</span><br><span class="line">	comm,</span><br><span class="line">	<span class="keyword">COALESCE</span>( comm, <span class="number">100</span>, <span class="number">2000</span> ),</span><br><span class="line">	<span class="keyword">COALESCE</span>( comm, <span class="literal">null</span>, <span class="literal">null</span> ) </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/单行函数/" rel="tag"># 单行函数</a>
+          
+            <a href="/tags/字符函数/" rel="tag"># 字符函数</a>
+          
+            <a href="/tags/数值函数/" rel="tag"># 数值函数</a>
+          
+            <a href="/tags/日期函数/" rel="tag"># 日期函数</a>
+          
+            <a href="/tags/转换函数/" rel="tag"># 转换函数</a>
+          
+            <a href="/tags/通用函数/" rel="tag"># 通用函数</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/30/Oracle之限定查询与排序显示/" rel="next" title="Oracle之限定查询与排序显示">
+                <i class="fa fa-chevron-left"></i> Oracle之限定查询与排序显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/31/Oracle之多表查询/" rel="prev" title="Oracle之多表查询">
+                Oracle之多表查询 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="IAJAOP" />
+            
+              <p class="site-author-name" itemprop="name">IAJAOP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">104</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/IAJAOP" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://500px.me/iajaop" target="_blank" title="500PX">
+                    
+                      <i class="fa fa-fw fa-globe"></i>500PX</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.google.com" title="Google" target="_blank">Google</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com" title="Baidu" target="_blank">Baidu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.zhihu.com" title="Zhihu" target="_blank">Zhihu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io" title="Hexo文档" target="_blank">Hexo文档</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com" title="NexT文档" target="_blank">NexT文档</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单行函数"><span class="nav-number">1.</span> <span class="nav-text">单行函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符函数"><span class="nav-number">2.</span> <span class="nav-text">字符函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数值函数"><span class="nav-number">3.</span> <span class="nav-text">数值函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日期操作"><span class="nav-number">4.</span> <span class="nav-text">日期操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日期操作公式"><span class="nav-number">4.1.</span> <span class="nav-text">日期操作公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日期函数"><span class="nav-number">4.2.</span> <span class="nav-text">日期函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转换函数"><span class="nav-number">5.</span> <span class="nav-text">转换函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">5.1.</span> <span class="nav-text">TO_CHAR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TO-DATE"><span class="nav-number">5.2.</span> <span class="nav-text">TO_DATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TO-NUMBER"><span class="nav-number">5.3.</span> <span class="nav-text">TO_NUMBER</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用函数"><span class="nav-number">6.</span> <span class="nav-text">通用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL"><span class="nav-number">6.1.</span> <span class="nav-text">NVL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL2"><span class="nav-number">6.2.</span> <span class="nav-text">NVL2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULLIF"><span class="nav-number">6.3.</span> <span class="nav-text">NULLIF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DECODE"><span class="nav-number">6.4.</span> <span class="nav-text">DECODE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CASE"><span class="nav-number">6.5.</span> <span class="nav-text">CASE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COALESCE"><span class="nav-number">6.6.</span> <span class="nav-text">COALESCE</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IAJAOP</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">44k</span>
+  
+</div>
+
+
+<!--  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div> --!>
+
+
+
+<!-- <div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共44k字</span>
+</div> --!>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 <script type="text/javascript" src="/js/src/love.js"></script> -->
+
