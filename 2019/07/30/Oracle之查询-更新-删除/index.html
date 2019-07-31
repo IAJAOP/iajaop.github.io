@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="查询简单查询语句语法：12SELECT [DISTINCT]  * | 列名称 [AS] [列别名] , 列名称 [AS] [列别名] ,...FROM 表名称 [表别名] ; 查询emp表中数据：1234select	* from	emp; 使用DISTINCT去重复：1234select DISTINCT	job from	emp; 使用“||”进行连接显示：1234select	&apos;a&apos; ||">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-30T08:58:54.464Z">
+<meta property="og:updated_time" content="2019-07-31T12:43:41.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle之查询&amp;更新&amp;删除">
 <meta name="twitter:description" content="查询简单查询语句语法：12SELECT [DISTINCT]  * | 列名称 [AS] [列别名] , 列名称 [AS] [列别名] ,...FROM 表名称 [表别名] ; 查询emp表中数据：1234select	* from	emp; 使用DISTINCT去重复：1234select DISTINCT	job from	emp; 使用“||”进行连接显示：1234select	&apos;a&apos; ||">
@@ -361,7 +361,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  701字
+                  724字
                 </span>
               
 
@@ -419,6 +419,7 @@
 </ul>
 <p>向myemp数据表之中增加一条新的数据：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--先复制备份</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> myemp <span class="keyword">as</span> <span class="keyword">select</span></span><br><span class="line">* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br><span class="line"><span class="comment">--查询是否复制成功</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	user_tables;</span><br><span class="line"><span class="comment">--确定数据存在</span></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">	* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	myemp;</span><br><span class="line"><span class="comment">--增加数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> myemp ( empno, job, hiredate, <span class="keyword">name</span>, mgr, sal, comm, deptno )</span><br><span class="line"><span class="keyword">values</span></span><br><span class="line">	( <span class="number">8888</span>, <span class="string">'CLERK'</span>, <span class="keyword">SYSDATE</span>, <span class="string">'李兴华'</span>, <span class="number">7369</span>, <span class="number">800</span>, <span class="number">100</span>, <span class="number">20</span> );</span><br></pre></td></tr></table></figure></p>
 <p>通过子查询增加myemp表数据，编写完整格式将所有20部门雇员的信息插入到myemp表之中：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> myemp ( empno, ename, job, mgr, hiredate, sal, comm, deptno ) <span class="keyword">select</span></span><br><span class="line">* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	deptno = <span class="number">20</span>;</span><br></pre></td></tr></table></figure></p>
+<p>多行数据插入，eg：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> ALL <span class="keyword">INTO</span> X</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">	( <span class="string">'a'</span>, <span class="number">6</span>, <span class="string">'a2019'</span> ) <span class="keyword">INTO</span> X</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">	( <span class="string">'b'</span>, <span class="number">3</span>, <span class="string">'b2019'</span> ) </span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	<span class="number">1</span> </span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	dual;</span><br></pre></td></tr></table></figure></p>
 <h2 id="数据更新"><a href="#数据更新" class="headerlink" title="数据更新"></a>数据更新</h2><p>数据库的更新操作主要是指的对数据表中的数据进行修改，与数据的增加一样，在数据修改的时候有两种形式：</p>
 <ul>
 <li><p>由用户自己指定要更新数据的内容</p>
@@ -559,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">56</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -581,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">104</span>
+                  <span class="site-state-item-count">106</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -694,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">44k</span>
+    <span title="Site words total count">45k</span>
   
 </div>
 
@@ -713,7 +714,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共44k字</span>
+  <span class="post-count">博客全站共45k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
