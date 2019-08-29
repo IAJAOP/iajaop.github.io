@@ -83,11 +83,11 @@
 <meta name="keywords" content="表的创建,表的管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle之表的创建与管理">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/Oracle之表的创建与管理/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/Oracle之表的创建与管理/index.html">
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Oracle常用数据类型   类型 长度 描述     CHAR(n) n= 1 to 2000（字节） 保存定长的字符串   VARCHAR2(n) n= 1 to 4000（字节） 可以放数字、字母以及ASCII码字符集，Oracle 12C开始，其最大支持32767字节长度   NUMBER(m,n) m = 1 to 38 n = -84 to 127 表示数字，其中小数部分长度为n，整数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T06:49:57.388Z">
+<meta property="og:updated_time" content="2019-08-29T15:40:29.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle之表的创建与管理">
 <meta name="twitter:description" content="Oracle常用数据类型   类型 长度 描述     CHAR(n) n= 1 to 2000（字节） 保存定长的字符串   VARCHAR2(n) n= 1 to 4000（字节） 可以放数字、字母以及ASCII码字符集，Oracle 12C开始，其最大支持32767字节长度   NUMBER(m,n) m = 1 to 38 n = -84 to 127 表示数字，其中小数部分长度为n，整数">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/24/Oracle之表的创建与管理/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/08/29/Oracle之表的创建与管理/"/>
 
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/Oracle之表的创建与管理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/Oracle之表的创建与管理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IAJAOP">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-24T01:05:58+08:00">
-                2019-07-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-29T23:39:33+08:00">
+                2019-08-29
               </time>
             
 
@@ -455,9 +455,9 @@
 </li>
 </ul>
 <h1 id="表的管理"><a href="#表的管理" class="headerlink" title="表的管理"></a>表的管理</h1><h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>在Oracle中，除了可以使用DDL创建新的数据表之外，也支持了复制已有数据表的支持。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> 表名称 <span class="keyword">AS</span> 子查询 ;</span><br></pre></td></tr></table></figure></p>
-<p>复制表的结构与内容，新表名为emp_copy：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp_copy <span class="keyword">as</span> <span class="keyword">select</span></span><br><span class="line">* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br></pre></td></tr></table></figure></p>
-<p>只复制表的结构：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp_copy <span class="keyword">as</span> <span class="keyword">select</span></span><br><span class="line">* </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	<span class="number">1</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
-<p>将所有部门的统计信息单独保存在一张新的department表中：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> department <span class="keyword">as</span> <span class="keyword">select</span></span><br><span class="line">d.DEPTNO deptno,</span><br><span class="line">d.DNAME dname,</span><br><span class="line">d.LOC loc,</span><br><span class="line"><span class="keyword">count</span>( e.EMPNO ) <span class="keyword">count</span>,</span><br><span class="line"><span class="keyword">sum</span>(</span><br><span class="line">e.SAL + NVL( e.COMM, <span class="number">0</span> )) <span class="keyword">sum</span>,</span><br><span class="line"><span class="keyword">round</span>( <span class="keyword">avg</span>( e.SAL + nvl( e.COMM, <span class="number">0</span> )), <span class="number">2</span> ) <span class="keyword">avg</span>,</span><br><span class="line"><span class="keyword">max</span>( e.SAL ) <span class="keyword">max</span>,</span><br><span class="line"><span class="keyword">min</span>( e.SAL ) <span class="keyword">min</span> </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dept d,</span><br><span class="line">	emp e </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	d.DEPTNO = e.DEPTNO ( + ) </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">	d.DEPTNO,</span><br><span class="line">	d.DNAME,</span><br><span class="line">	d.LOC </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	d.DEPTNO;</span><br></pre></td></tr></table></figure></p>
+<p>复制表的结构与内容，新表名为emp_copy：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp_copy <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    * </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp;</span><br></pre></td></tr></table></figure></p>
+<p>只复制表的结构：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp_copy <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">    * </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	emp </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	<span class="number">1</span> = <span class="number">2</span>;</span><br></pre></td></tr></table></figure></p>
+<p>将所有部门的统计信息单独保存在一张新的department表中：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> department <span class="keyword">as</span> <span class="keyword">select</span></span><br><span class="line">    d.DEPTNO deptno,</span><br><span class="line">    d.DNAME dname,</span><br><span class="line">    d.LOC loc,</span><br><span class="line">    <span class="keyword">count</span>( e.EMPNO ) <span class="keyword">count</span>,</span><br><span class="line">    <span class="keyword">sum</span>(</span><br><span class="line">    e.SAL + NVL( e.COMM, <span class="number">0</span> )) <span class="keyword">sum</span>,</span><br><span class="line">    <span class="keyword">round</span>( <span class="keyword">avg</span>( e.SAL + nvl( e.COMM, <span class="number">0</span> )), <span class="number">2</span> ) <span class="keyword">avg</span>,</span><br><span class="line">    <span class="keyword">max</span>( e.SAL ) <span class="keyword">max</span>,</span><br><span class="line">    <span class="keyword">min</span>( e.SAL ) <span class="keyword">min</span> </span><br><span class="line"><span class="keyword">from</span></span><br><span class="line">	dept d,</span><br><span class="line">	emp e </span><br><span class="line"><span class="keyword">where</span></span><br><span class="line">	d.DEPTNO = e.DEPTNO ( + ) </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span></span><br><span class="line">	d.DEPTNO,</span><br><span class="line">	d.DNAME,</span><br><span class="line">	d.LOC </span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span></span><br><span class="line">	d.DEPTNO;</span><br></pre></td></tr></table></figure></p>
 <h2 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h2><p>在Oracle之中，为了方便用户对数据表进行管理，所以专门提供了修改表名称的操作：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RENA</span><br><span class="line">将emp_copy表命名为copy_emp:</span><br><span class="line">```sql</span><br><span class="line"><span class="keyword">rename</span> emp_copy <span class="keyword">to</span> copy_emp;</span><br></pre></td></tr></table></figure></p>
 <h2 id="截断表"><a href="#截断表" class="headerlink" title="截断表"></a>截断表</h2><p>如果此时要清空一张表中的全部数据，肯定首先想到的是“DELETE FROM 表名称”这样的语法，然而这样的清空表数据的方法不仅需要的时间很长，而且一张表所占用的资源（例如：索引、约束等，在随后的章节会讲解到）也不会立刻释放掉，为此在Oracle之中提供了专门的截断表的操作：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> 表名称 ;</span><br></pre></td></tr></table></figure></p>
 <p>用于删除清空一张表的数据，效率比“delete from table_name”高：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> copy_emp;</span><br></pre></td></tr></table></figure></p>
@@ -505,6 +505,7 @@
 <h3 id="创建数据表空间"><a href="#创建数据表空间" class="headerlink" title="创建数据表空间"></a>创建数据表空间</h3><p>创建一个iajaop_data的数据表空间：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLESPACE</span> iajaop_data</span><br><span class="line"><span class="keyword">DATAFILE</span> <span class="string">'c:\iajaop\iajaop_data01.dbf'</span> </span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">50</span>M,</span><br><span class="line"><span class="string">'c:\iajaop\iajaop_data02.dbf'</span></span><br><span class="line"><span class="keyword">SIZE</span> <span class="number">50</span>M</span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">on</span> <span class="keyword">NEXT</span> <span class="number">2</span>M</span><br><span class="line"><span class="keyword">LOGGING</span>;</span><br></pre></td></tr></table></figure></p>
 <h3 id="创建临时表空间"><a href="#创建临时表空间" class="headerlink" title="创建临时表空间"></a>创建临时表空间</h3><p>创建一个iajaop_temp的临时表空间：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TEMPORARY</span> <span class="keyword">TABLESPACE</span> iajaop_temp</span><br><span class="line">TEMPFILE <span class="string">'c:\iajaop\iajaop_temp01.dbf'</span> <span class="keyword">SIZE</span> <span class="number">10</span>M,</span><br><span class="line"><span class="string">'c:\iajaop\iajaop_temp02.dbf'</span> <span class="keyword">SIZE</span> <span class="number">5</span>M </span><br><span class="line"><span class="keyword">AUTOEXTEND</span> <span class="keyword">on</span> <span class="keyword">NEXT</span> <span class="number">1</span>M;</span><br></pre></td></tr></table></figure></p>
 <h3 id="在特定表空间中创建表"><a href="#在特定表空间中创建表" class="headerlink" title="在特定表空间中创建表"></a>在特定表空间中创建表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> c##spdb.test (</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">NUMBER</span>,</span><br><span class="line"><span class="keyword">name</span> VARCHAR2(<span class="number">15</span>)</span><br><span class="line">) <span class="keyword">TABLESPACE</span> iajaop_data;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -536,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/23/Shell入门（一）/" rel="next" title="Shell入门（一）">
-                <i class="fa fa-chevron-left"></i> Shell入门（一）
+              <a href="/2019/08/29/Shell入门（三）/" rel="next" title="Shell入门（三）">
+                <i class="fa fa-chevron-left"></i> Shell入门（三）
               </a>
             
           </div>
@@ -545,10 +546,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/24/Oracle之完整性约束/" rel="prev" title="Oracle之完整性约束">
-                Oracle之完整性约束 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -629,7 +626,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -651,7 +648,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">107</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -764,7 +761,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45.7k</span>
+    <span title="Site words total count">38.9k</span>
   
 </div>
 
@@ -783,7 +780,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共45.7k字</span>
+  <span class="post-count">博客全站共38.9k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
