@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-25T07:44:38.878Z">
+<meta property="og:updated_time" content="2019-08-29T15:32:05.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（一）">
 <meta name="twitter:description" content="Shell基础命令文件编辑器vi入门创建一个demo.txt1vi demo.txt 工作模式vi有三种工作模式：  普通模式 修改模式 命令行模式  移动光标类命令   命令 作用 命令 作用     k 上移 nk 上移n行   j 下移 nj 下移n行   h 左移 nh 左移n列   l 右移 nl 右移n列   $ 移动光标到行尾 n$ 移动光标到第n行的行尾   0 移动光标到行首 ^">
@@ -850,8 +850,9 @@
 <h3 id="权限变更"><a href="#权限变更" class="headerlink" title="权限变更"></a>权限变更</h3><table>
 <thead>
 <tr>
+<th style="text-align:center"></th>
 <th style="text-align:center">命令</th>
-<th style="text-align:center">作用</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
@@ -876,20 +877,16 @@
 <h4 id="chmod符号修改方式"><a href="#chmod符号修改方式" class="headerlink" title="chmod符号修改方式"></a>chmod符号修改方式</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">角色</th>
-<th style="text-align:center">操作</th>
-<th style="text-align:center">权限</th>
-<th style="text-align:center">对象</th>
+<th style="text-align:center">chmod</th>
+<th style="text-align:center">u、g、o、a</th>
+<th style="text-align:center">+（加入）、-（去除）、=（设置）</th>
+<th style="text-align:center">r、w、x</th>
+<th style="text-align:center">文件目录</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">chmod</td>
-<td style="text-align:center">u、g、o、a</td>
-<td style="text-align:center">+（加入）、-（去除）、=（设置）</td>
-<td style="text-align:center">r、w、x</td>
-<td style="text-align:center">文件目录</td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
@@ -1232,7 +1229,8 @@
 </tr>
 <tr>
 <td style="text-align:center">-E</td>
-<td style="text-align:center">或的关系，<code>grep -E &#39;string1｜string2&#39; file.txt</code>string1和string2是或的关系</td>
+<td style="text-align:center">或的关系，`grep -E ‘string1</td>
+<td>string2’ file.txt`string1和string2是或的关系</td>
 </tr>
 </tbody>
 </table>
@@ -1265,15 +1263,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="find-amp-grep结合"><a href="#find-amp-grep结合" class="headerlink" title="find&amp;grep结合"></a>find&amp;grep结合</h3><p>eg：找出当前目录下以c为结尾的文件，同时找出其中包含strcpy的字段，但是不包含kahao字段的：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name “*c” |xargs grep -rni “strcpy” | grep -v  “kahao”</span><br></pre></td></tr></table></figure></p>
+<h3 id="find-amp-grep结合"><a href="#find-amp-grep结合" class="headerlink" title="find&amp;grep结合"></a>find&amp;grep结合</h3><p>eg：找出当前目录下以c为结尾的文件，同时找出其中包含strcpy的字段，但是不包含kahao字段的：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name “*c” | xargs grep -rni “strcpy” | grep -v  “kahao”</span><br></pre></td></tr></table></figure></p>
 <p>由于很多命令不支持<code>|</code>管道来传递参数，而日常工作中有有这个必要，所以就有了<code>xargs</code>命令。</p>
 <h2 id="系统相关命令"><a href="#系统相关命令" class="headerlink" title="系统相关命令"></a>系统相关命令</h2><table>
 <thead>
 <tr>
+<th style="text-align:center"></th>
 <th style="text-align:center">命令</th>
 <th style="text-align:center">作用</th>
 <th style="text-align:center">命令</th>
-<th style="text-align:center">作用 </th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody>
@@ -1460,7 +1459,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1482,7 +1481,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1595,7 +1594,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45k</span>
+    <span title="Site words total count">45.7k</span>
   
 </div>
 
@@ -1614,7 +1613,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共45k字</span>
+  <span class="post-count">博客全站共45.7k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="小师弟的私房">
 <meta property="og:description" content="Shell基础命令网络相关命令网络相关的命令按照如下几类进行讲述：      命令 作用 命令 作用     ping 网络是否通 telnet 端口是否通   netstat 端口是否被占用 ifconfig 主机的网卡情况   ssh，telnet 远程登录工具 ftp，sftp，scp 文件传输工具     主机间网络连通性：ping IP 测试另外一台服务器的端口是否开启监听，是否能访问：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-30T08:21:14.289Z">
+<meta property="og:updated_time" content="2019-08-29T15:32:54.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell入门（二）">
 <meta name="twitter:description" content="Shell基础命令网络相关命令网络相关的命令按照如下几类进行讲述：      命令 作用 命令 作用     ping 网络是否通 telnet 端口是否通   netstat 端口是否被占用 ifconfig 主机的网卡情况   ssh，telnet 远程登录工具 ftp，sftp，scp 文件传输工具     主机间网络连通性：ping IP 测试另外一台服务器的端口是否开启监听，是否能访问：">
@@ -597,7 +597,7 @@
 <ol start="6">
 <li>变量定义中的字符串<ul>
 <li>单引号：<br>被引起来的字符全部做普通字符，即全部原样输出：<code>echo &#39;my $SHELL&#39;</code>，这里<code>$SHELL</code>不会被转换。</li>
-<li>双引号：<br>引号内的内容，除了<code>$</code>、转义符<code>\</code>，倒引号（`），这三个保留特殊的功能，其他均作普通字符。<br>典型的一个例子：<code>“‘$var’”</code>单引号和双引号典型的是，如果最外面是双引号，那么里面的<code>$var</code>进行转换，如果最外面是单引号<code>&#39;&#39;</code>，里面不做转换，直接输出。</li>
+<li>双引号：<br>引号内的内容，除了（$）、转义符（\），倒引号（`），这三个保留特殊的功能，其他均作普通字符。<br>典型的一个例子：<code>“‘$var’”</code>单引号和双引号典型的是，如果最外面是双引号，那么里面的<code>$var</code>进行转换，如果最外面是单引号<code>&#39;&#39;</code>，里面不做转换，直接输出。</li>
 </ul>
 </li>
 </ol>
@@ -736,7 +736,7 @@
 </ul>
 <h4 id="if分支结构"><a href="#if分支结构" class="headerlink" title="if分支结构"></a>if分支结构</h4><p>if 分支结构的默认语法如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if [ 条件表达式 ]</span><br><span class="line">then</span><br><span class="line">    commands</span><br><span class="line">elif [ 条件表达式 ]</span><br><span class="line">then   </span><br><span class="line">    commands</span><br><span class="line">else</span><br><span class="line">    commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
 <p>注：[ ]中的条件表达式与两侧的括号有空格，之前提到的test条件表达式测试通过后，可以直接替换。<br>if 分支结构的另外一种语法结构如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if [ 条件表达式 ];then</span><br><span class="line">    commands</span><br><span class="line">elif [ 条件表达式 ];then   </span><br><span class="line">    commands</span><br><span class="line">else</span><br><span class="line">    commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p>eg：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">score=$1</span><br><span class="line">echo "The score is $&#123;score&#125;"</span><br><span class="line"><span class="meta">#</span><span class="bash">小于0，大于100，成绩异常</span></span><br><span class="line">if [ $&#123;score&#125; -le 0 -o $&#123;score&#125; -ge 100 ];then</span><br><span class="line">    echo "成绩异常！"</span><br><span class="line"><span class="meta">#</span><span class="bash">90&lt;=score&lt;=100 A</span></span><br><span class="line">elif [ $&#123;score&#125; -gt 90 -a $&#123;score&#125; -lt 100 ];then</span><br><span class="line">    echo "级别：A等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">80&lt;=score&lt;=89 B</span></span><br><span class="line">elif [ $&#123;score&#125; -gt 80 -a $&#123;score&#125; -lt 89 ];then</span><br><span class="line">    echo "级别：B等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">70&lt;=score&lt;=79 C</span></span><br><span class="line">elif [ $&#123;score&#125; -gt 70 -a $&#123;score&#125; -lt 79 ];then</span><br><span class="line">    echo "级别：C等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">60&lt;=score&lt;=69 D</span></span><br><span class="line">elif [ $&#123;score&#125; -gt 60 -a $&#123;score&#125; -lt 69 ];then</span><br><span class="line">    echo "级别：D等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">0&lt;=score&lt;=59 D</span></span><br><span class="line">else</span><br><span class="line">    echo "级别：F等！"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>eg：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">score=$1</span><br><span class="line">echo "The score is $&#123;score&#125;"</span><br><span class="line"><span class="meta">#</span><span class="bash">小于0，大于100，成绩异常</span></span><br><span class="line">if [ $&#123;score&#125; -le 0 -o $&#123;score&#125; -ge 100 ];then</span><br><span class="line">    echo "成绩异常！"</span><br><span class="line"><span class="meta">#</span><span class="bash">90&lt;=score&lt;=100 A</span></span><br><span class="line">elif [ $&#123;score&#125; -ge 90 -a $&#123;score&#125; -le 100 ];then</span><br><span class="line">    echo "级别：A等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">80&lt;=score&lt;=89 B</span></span><br><span class="line">elif [ $&#123;score&#125; -ge 80 -a $&#123;score&#125; -lt 90 ];then</span><br><span class="line">    echo "级别：B等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">70&lt;=score&lt;=79 C</span></span><br><span class="line">elif [ $&#123;score&#125; -ge 70 -a $&#123;score&#125; -lt 80 ];then</span><br><span class="line">    echo "级别：C等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">60&lt;=score&lt;=69 D</span></span><br><span class="line">elif [ $&#123;score&#125; -ge 60 -a $&#123;score&#125; -lt 70 ];then</span><br><span class="line">    echo "级别：D等！"</span><br><span class="line"><span class="meta">#</span><span class="bash">0&lt;=score&lt;=59 D</span></span><br><span class="line">else</span><br><span class="line">    echo "级别：F等！"</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
 <h4 id="for循环结构"><a href="#for循环结构" class="headerlink" title="for循环结构"></a>for循环结构</h4><p>shell中for 循环的一般格式如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for 变量 in 列表</span><br><span class="line">do</span><br><span class="line">    command1</span><br><span class="line">    command2</span><br><span class="line">    commandN</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
 <p>for循环常用的几种场景：</p>
 <ul>
@@ -948,7 +948,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -970,7 +970,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">106</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1083,7 +1083,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">45k</span>
+    <span title="Site words total count">45.7k</span>
   
 </div>
 
@@ -1102,7 +1102,7 @@
 
 <!-- <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共45k字</span>
+  <span class="post-count">博客全站共45.7k字</span>
 </div> --!>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
